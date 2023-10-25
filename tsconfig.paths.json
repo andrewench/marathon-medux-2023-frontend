@@ -7,6 +7,8 @@
       "@/components/ui": ["components/ui"],
       "@/components/providers": ["components/providers"],
       "@/shared/fonts": ["shared/fonts"],
+      "@/shared/utils": ["shared/utils"],
+      "@/shared/types": ["shared/types"],
       "@/*": ["./*"]
     }
   }

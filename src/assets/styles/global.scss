@@ -2,8 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  .page {
+    @apply min-h-screen;
+  }
+}
+
 body {
-  @apply scroll-smooth;
+  @apply scroll-smooth min-h-screen;
 
   -webkit-font-smoothing: antialiased;
 }

@@ -16,6 +16,8 @@
     "^@/components/ui",
     "^@/components/providers",
     "^@/shared/fonts",
+    "^@/shared/utils",
+    "^@/shared/types",
     "^@/",
     "^@/assets/styles/*"
   ],
