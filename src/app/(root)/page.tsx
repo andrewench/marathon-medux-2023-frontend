@@ -1,7 +1,7 @@
 import { FC } from 'react'
 
 const Home: FC = () => {
-  return <main className="font-sans">Page</main>
+  return <main className="font-sans text-marathon-dark">Page</main>
 }
 
 export default Home

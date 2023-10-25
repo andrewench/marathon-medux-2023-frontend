@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 
 import { FC, PropsWithChildren } from 'react'
 
+import styles from './page.module.scss'
 import cn from 'clsx'
 
 import { roboto, rubik } from '@/shared/fonts'
@@ -15,8 +16,10 @@ export const metadata: Metadata = {
 
 const RootLayout: FC<PropsWithChildren> = ({ children }) => {
   return (
-    <html lang="en">
-      <body className={cn(rubik.variable, roboto.variable)}>{children}</body>
+    <html lang="en" data-theme="light">
+      <body className={cn(styles.box, rubik.variable, roboto.variable)}>
+        {children}
+      </body>
     </html>
   )
 }
