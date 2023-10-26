@@ -1,3 +1,27 @@
+.header {
+  @apply pt-5 px-5;
+}
+
+.left {
+  @apply gap-5;
+}
+
 .link {
   @apply focus:outline-none;
+}
+
+.search {
+  @apply h-10 rounded-[8px] px-12 text-sm w-[490px] focus:outline-none;
+}
+
+.profile {
+  @apply gap-5;
+}
+
+.username {
+  @apply font-medium text-marathon-light;
+}
+
+.specialty {
+  @apply text-[10px] uppercase text-marathon-light;
 }

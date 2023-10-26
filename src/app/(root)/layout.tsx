@@ -2,9 +2,9 @@ import type { Metadata } from 'next'
 
 import { FC, PropsWithChildren } from 'react'
 
-import styles from './page.module.scss'
-
 import { PageLayout } from '@/components/layout'
+
+import styles from './page.module.scss'
 
 export const metadata: Metadata = {
   title: 'Medux | Login',

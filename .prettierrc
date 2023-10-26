@@ -19,7 +19,12 @@
     "^@/shared/utils",
     "^@/shared/types",
     "^@/",
-    "^@/assets/styles/*"
+    "^(.*component)$",
+    "^(.*layout)$",
+    "^(.*.interface)$",
+    "^(.*.type)$",
+    "^@/assets/styles/*",
+    "^(.*.module.scss)$"
   ],
   "importOrderSeparation": true,
   "importOrderSortSpecifiers": true,

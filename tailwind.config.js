@@ -1,5 +1,4 @@
 /** @type {import('tailwindcss').Config} */
-
 const { createThemes } = require('tw-colors')
 
 module.exports = {
@@ -26,6 +25,9 @@ module.exports = {
         'marathon-blue': '#2662F0',
         'marathon-blue_2': '#deeeff',
       },
+      borderRadius: {
+        'marathon-8': '8px',
+      },
     },
   },
   plugins: [
@@ -35,12 +37,13 @@ module.exports = {
         'marathon-light-background': '#fafbfd',
         'marathon-gray': '#e4eaf0',
         'marathon-white': '#fff',
+        'marathon-light': '#414d55',
       },
       dark: {
         'marathon-background': '#090a0a',
+        'marathon-light-background': '#171819',
         'marathon-gray': '#131414',
-        'marathon-dark': '#414d55',
-        'marathon-black': '#171819',
+        'marathon-light': '#9ea7ac',
       },
     }),
   ],
