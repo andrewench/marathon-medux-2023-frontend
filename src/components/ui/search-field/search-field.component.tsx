@@ -14,6 +14,7 @@ export const SearchField = <T extends FieldValues>(props: ITextField<T>) => {
         alt="Search icon"
         className="absolute left-5 top-3"
       />
+
       <TextField<T> {...props} />
     </div>
   )

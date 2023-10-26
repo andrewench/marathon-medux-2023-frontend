@@ -50,13 +50,15 @@ export const Header: FC = () => {
       </Flex>
 
       <Flex align="center" className={styles.profile}>
-        <Image
-          src="/icons/bell.svg"
-          width={20}
-          height={20}
-          alt="Notifications Icon"
-          draggable={false}
-        />
+        <button className={styles.button}>
+          <Image
+            src="/icons/bell.svg"
+            width={20}
+            height={20}
+            alt="Notifications Icon"
+            draggable={false}
+          />
+        </button>
 
         <Avatar />
 
@@ -65,13 +67,15 @@ export const Header: FC = () => {
           <p className={styles.specialty}>Surgeon</p>
         </div>
 
-        <Image
-          src="/icons/chevron-down.svg"
-          width={12}
-          height={12}
-          alt="Down Icon"
-          draggable={false}
-        />
+        <button className={styles.button}>
+          <Image
+            src="/icons/chevron-down.svg"
+            width={12}
+            height={12}
+            alt="Down Icon"
+            draggable={false}
+          />
+        </button>
       </Flex>
     </Flex>
   )

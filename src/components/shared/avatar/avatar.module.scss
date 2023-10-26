@@ -1,3 +1,7 @@
 .avatar {
-  @apply w-10 h-10 rounded-marathon-8 bg-[#ccc];
+  @apply w-[42px] h-[42px] border-[1px] border-marathon-light/20 rounded-marathon-8 overflow-hidden flex-shrink-0;
+
+  & > img {
+    @apply block object-cover;
+  }
 }

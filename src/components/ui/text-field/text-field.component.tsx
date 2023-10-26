@@ -1,20 +1,17 @@
 import { useMemo } from 'react'
-import { FieldValues, Path, useFormContext } from 'react-hook-form'
+import { FieldValues, useFormContext } from 'react-hook-form'
 
 import cn from 'clsx'
 
-import { PropsWithClassName } from '@/shared/types'
+import { type ITextField } from './text-field.interface'
 
-export interface ITextField<T extends FieldValues> extends PropsWithClassName {
-  type: 'text' | 'password'
-  field: Path<T>
-  placeholder: string
-}
+import styles from './text-field.module.scss'
 
 export const TextField = <T extends FieldValues>({
   field,
   placeholder,
   type,
+  autoComplete,
   className,
 }: ITextField<T>) => {
   const { register } = useFormContext<T>()
@@ -31,7 +28,8 @@ export const TextField = <T extends FieldValues>({
     <input
       type={type}
       placeholder={placeholder}
-      className={cn(className)}
+      autoComplete={autoComplete}
+      className={cn(styles.field, className)}
       {...overrideRegister}
     />
   )

@@ -16,6 +16,10 @@
 
 .profile {
   @apply gap-5;
+
+  & > .button {
+    @apply first:mr-3 last:ml-3;
+  }
 }
 
 .username {
