@@ -1,0 +1,7 @@
+.wrap {
+  @apply fixed left-0 top-0 w-full h-1 bg-marathon-gray;
+}
+
+.progress {
+  @apply absolute left-0 top-0 bg-marathon-blue w-9/12 h-full rounded-tr-[2px] rounded-br-[2px];
+}
