@@ -1,0 +1,26 @@
+$notify_size: 12px;
+
+.button {
+  @apply relative bg-[#414d55] h-10 w-10 rounded-marathon-8;
+
+  & > img {
+    @apply block ml-[13px];
+  }
+
+  &.notify {
+    @apply before:bg-marathon-red before:border-marathon-white;
+
+    &::before {
+      content: '';
+      position: absolute;
+      display: block;
+      width: $notify_size;
+      height: $notify_size;
+      border-width: 2px;
+      border-style: solid;
+      border-radius: 50%;
+      right: calc(-1 * #{$notify_size / 3});
+      top: calc(-1 * #{$notify_size / 3});
+    }
+  }
+}

@@ -1,0 +1,15 @@
+.box {
+  @apply p-5;
+}
+
+.emergency {
+  @apply gap-4;
+}
+
+.help {
+  @apply text-marathon-light font-medium font-rubik w-min leading-[18px];
+}
+
+.menu {
+  @apply mt-4;
+}

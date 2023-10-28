@@ -1,0 +1,11 @@
+.item {
+  @apply w-full py-3;
+}
+
+.icon {
+  @apply w-8 h-8;
+}
+
+.link {
+  @apply flex items-center gap-3 text-marathon-light;
+}

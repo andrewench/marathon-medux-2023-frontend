@@ -4,6 +4,7 @@
     "paths": {
       "@/components/layout": ["components/layout"],
       "@/components/shared": ["components/shared"],
+      "@/components/icons": ["components/icons"],
       "@/components/ui": ["components/ui"],
       "@/components/providers": ["components/providers"],
       "@/shared/fonts": ["shared/fonts"],

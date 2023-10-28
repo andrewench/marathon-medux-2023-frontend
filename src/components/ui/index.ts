@@ -1,3 +1,5 @@
 export { TextField } from './text-field/text-field.component'
 export { type ITextField } from './text-field/text-field.interface'
 export { SearchField } from './search-field/search-field.component'
+export { EmergencyHelp } from './emergency-help/emergency-help.component'
+export { SideBarItem } from './sidebar-item/sidebar-item.component'
