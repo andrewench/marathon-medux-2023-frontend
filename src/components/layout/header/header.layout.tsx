@@ -10,6 +10,8 @@ import { Avatar } from '@/components/shared'
 
 import { SearchField } from '@/components/ui'
 
+import { BellIcon, ChevronDownIcon } from '@/components/icons'
+
 import { Flex } from '../flex/flex.layout'
 
 import styles from './header.module.scss'
@@ -28,6 +30,7 @@ export const Header: FC = () => {
             width={164}
             height={42}
             alt="Medux Logo"
+            priority={true}
             draggable={false}
             className={styles.logo}
           />
@@ -47,13 +50,7 @@ export const Header: FC = () => {
 
       <Flex align="center" className={styles.profile}>
         <button className={styles.button}>
-          <Image
-            src="/icons/bell.svg"
-            width={20}
-            height={20}
-            alt="Notifications Icon"
-            draggable={false}
-          />
+          <BellIcon />
         </button>
 
         <Avatar />
@@ -64,13 +61,7 @@ export const Header: FC = () => {
         </div>
 
         <button className={styles.button}>
-          <Image
-            src="/icons/chevron-down.svg"
-            width={12}
-            height={12}
-            alt="Down Icon"
-            draggable={false}
-          />
+          <ChevronDownIcon />
         </button>
       </Flex>
     </header>

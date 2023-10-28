@@ -1,8 +1,8 @@
-import Image from 'next/image'
-
 import { FC } from 'react'
 
 import cn from 'clsx'
+
+import { MicrophoneIcon } from '@/components/icons'
 
 import { type IEmergencyHelp } from './emergency-help.interface'
 
@@ -15,14 +15,7 @@ export const EmergencyHelp: FC<IEmergencyHelp> = ({ notify }) => {
         [styles.notify]: notify,
       })}
     >
-      <Image
-        src="/icons/microphone.svg"
-        alt="Microphone Icon"
-        width={14}
-        height={20}
-        quality={100}
-        draggable={false}
-      />
+      <MicrophoneIcon />
     </button>
   )
 }

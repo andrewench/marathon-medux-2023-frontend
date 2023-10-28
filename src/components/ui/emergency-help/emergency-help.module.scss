@@ -3,8 +3,8 @@ $notify_size: 12px;
 .button {
   @apply relative bg-[#414d55] h-10 w-10 rounded-marathon-8 flex-shrink-0;
 
-  & > img {
-    @apply block ml-[13px];
+  & > svg {
+    @apply ml-[12px];
   }
 
   &.notify {
