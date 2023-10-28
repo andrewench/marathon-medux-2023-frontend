@@ -1,13 +1,23 @@
 .header {
-  @apply pt-5 px-5;
+  @apply content-center;
+
+  display: inherit;
+  grid-template-columns: 200px 490px 1fr;
+  grid-column: 1 / -1;
 }
 
 .left {
-  @apply gap-5;
+  display: inherit;
+  grid-template-columns: 200px 490px;
+  grid-column: 1 / span 2;
 }
 
 .link {
   @apply focus:outline-none;
+}
+
+.logo {
+  @apply mx-auto;
 }
 
 .search {
@@ -15,7 +25,9 @@
 }
 
 .profile {
-  @apply gap-5;
+  @apply gap-5 mr-5;
+
+  grid-column: -1;
 
   & > .button {
     @apply first:mr-3 last:ml-3;

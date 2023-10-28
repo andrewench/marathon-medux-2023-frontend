@@ -2,8 +2,6 @@ import { FC } from 'react'
 
 import cn from 'clsx'
 
-import { Flex } from '@/components/layout'
-
 import { PageIndicator } from '@/components/shared'
 
 import { roboto, rubik } from '@/shared/fonts'
@@ -15,6 +13,8 @@ import { SideBar } from '../sidebar/sidebar.layout'
 
 import '@/assets/styles/global.scss'
 
+import styles from './page.module.scss'
+
 export const PageLayout: FC<PropsWithClassNameAndChildren> = ({
   children,
   className,
@@ -22,16 +22,16 @@ export const PageLayout: FC<PropsWithClassNameAndChildren> = ({
   return (
     <html lang="en" data-theme="light">
       <body className={cn(rubik.variable, roboto.variable, className)}>
-        <div className="page">
+        <div className={cn(styles.page, 'page')}>
           <PageIndicator />
 
           <Header />
 
-          <Flex>
+          <div className={styles.content}>
             <SideBar />
 
             {children}
-          </Flex>
+          </div>
         </div>
       </body>
     </html>

@@ -20,13 +20,8 @@ export const Header: FC = () => {
   })
 
   return (
-    <Flex
-      as="header"
-      align="center"
-      content="space-between"
-      className={styles.header}
-    >
-      <Flex align="center" className={styles.left}>
+    <header className={styles.header}>
+      <div className={styles.left}>
         <Link href="/dashboard" draggable={false} className={styles.link}>
           <Image
             src="/logo.svg"
@@ -34,6 +29,7 @@ export const Header: FC = () => {
             height={42}
             alt="Medux Logo"
             draggable={false}
+            className={styles.logo}
           />
         </Link>
 
@@ -47,7 +43,7 @@ export const Header: FC = () => {
             />
           </form>
         </FormProvider>
-      </Flex>
+      </div>
 
       <Flex align="center" className={styles.profile}>
         <button className={styles.button}>
@@ -77,6 +73,6 @@ export const Header: FC = () => {
           />
         </button>
       </Flex>
-    </Flex>
+    </header>
   )
 }
