@@ -7,6 +7,7 @@
       "@/components/icons": ["components/icons"],
       "@/components/ui": ["components/ui"],
       "@/components/providers": ["components/providers"],
+      "@/shared/hooks": ["shared/hooks"],
       "@/shared/fonts": ["shared/fonts"],
       "@/shared/utils": ["shared/utils"],
       "@/shared/types": ["shared/types"],

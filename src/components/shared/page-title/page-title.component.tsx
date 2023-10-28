@@ -30,7 +30,7 @@ export const PageTitle: FC<{ title: string }> = ({ title }) => {
 
           <label className={cn(styles.text, styles.label)}>Font size</label>
 
-          <ProgressBar percent={75} maxWidth={100} />
+          <ProgressBar percent={50} maxWidth={100} />
         </Flex>
       </Flex>
     </Flex>

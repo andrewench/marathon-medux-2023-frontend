@@ -1,12 +1,14 @@
+@import '../../../assets/styles/_variables';
+
 .page {
   @apply grid;
 
-  grid-template: 100px 40px 1fr / 0 200px 1fr;
+  grid-template: 100px 40px 1fr / 0 #{$SIDEBAR_WIDTH} 1fr;
 }
 
 .content {
   @apply grid;
 
-  grid-template-columns: 200px 1fr;
+  grid-template-columns: #{$SIDEBAR_WIDTH} 1fr;
   grid-column: 1 / -1;
 }
