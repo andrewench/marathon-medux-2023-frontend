@@ -8,6 +8,8 @@
 
 .help {
   @apply text-marathon-light font-medium font-rubik w-min leading-[18px];
+
+  font-size: calc(1rem * var(--font-zoom));
 }
 
 .menu {

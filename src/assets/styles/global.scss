@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --font-zoom: 1;
+}
+
 @layer base {
   .page {
     @apply min-h-screen bg-marathon-background;

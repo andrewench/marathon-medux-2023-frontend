@@ -1,5 +1,11 @@
+.box {
+  @apply h-10;
+}
+
 .heading {
-  @apply font-rubik text-[28px] text-marathon-light font-medium;
+  @apply font-rubik text-marathon-light font-medium;
+
+  font-size: calc(1.75rem * var(--font-zoom));
 }
 
 .label {
@@ -7,7 +13,9 @@
 }
 
 .contrast {
-  @apply text-sm text-marathon-light;
+  @apply text-marathon-light;
+
+  font-size: calc(0.875rem * var(--font-zoom));
 
   & > svg {
     @apply inline-block mr-3;

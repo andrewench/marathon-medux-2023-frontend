@@ -12,7 +12,7 @@ import styles from './page-title.module.scss'
 
 export const PageTitle: FC<{ title: string }> = ({ title }) => {
   return (
-    <Flex align="center" content="space-between">
+    <Flex align="center" content="space-between" className={styles.box}>
       <h1 className={styles.heading}>{title}</h1>
 
       <Flex align="center" className={styles.actions}>

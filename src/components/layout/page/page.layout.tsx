@@ -20,7 +20,7 @@ export const PageLayout: FC<PropsWithClassNameAndChildren> = ({
   className,
 }) => {
   return (
-    <html lang="en" data-theme="light" data-font-zoom="1">
+    <html lang="en" data-theme="light">
       <body className={cn(rubik.variable, roboto.variable, className)}>
         <div className={cn(styles.page, 'page')}>
           <PageIndicator />

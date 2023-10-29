@@ -23,7 +23,9 @@
 }
 
 .search {
-  @apply h-10 rounded-[8px] px-12 text-sm w-[490px] focus:outline-none;
+  @apply h-10 rounded-[8px] px-12 w-[490px] focus:outline-none;
+
+  font-size: calc(0.875rem * var(--font-zoom));
 }
 
 .profile {
@@ -38,8 +40,12 @@
 
 .username {
   @apply font-medium text-marathon-light;
+
+  font-size: calc(1rem * var(--font-zoom));
 }
 
 .specialty {
-  @apply text-[10px] uppercase text-marathon-light;
+  @apply uppercase text-marathon-light;
+
+  font-size: calc(0.625rem * var(--font-zoom));
 }

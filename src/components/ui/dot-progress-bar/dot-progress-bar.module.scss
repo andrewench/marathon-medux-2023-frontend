@@ -11,7 +11,7 @@
 }
 
 .drag {
-  @apply absolute -top-[2px] w-4 h-4 rounded-[8px] bg-marathon-light hover:cursor-pointer;
+  @apply absolute -top-[2px] w-4 h-4 rounded-[8px] bg-marathon-light hover:cursor-pointer transition-all duration-300;
 
   box-shadow: 0 1px 8px #414d5540;
 }

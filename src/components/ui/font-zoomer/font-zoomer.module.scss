@@ -1,5 +1,7 @@
 .label {
-  @apply mr-1 text-sm text-marathon-light;
+  @apply mr-1 text-marathon-light;
+
+  font-size: calc(0.875rem * var(--font-zoom));
 }
 
 .size {

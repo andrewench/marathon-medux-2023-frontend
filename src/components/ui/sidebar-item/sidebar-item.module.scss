@@ -8,4 +8,6 @@
 
 .link {
   @apply flex items-center gap-3 text-marathon-light;
+
+  font-size: calc(16px * var(--font-zoom));
 }

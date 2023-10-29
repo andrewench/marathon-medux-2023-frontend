@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from 'react'
+import { FC, useEffect, useMemo, useState } from 'react'
 
 import cn from 'clsx'
 
@@ -12,35 +12,42 @@ import { FontIcon } from '@/components/icons'
 import styles from './font-zoomer.module.scss'
 
 export const FontZoomer: FC = () => {
-  const [fontZoom, setFontZoom] = useState<0.5 | 1 | 1.5>(1)
+  const [fontZoom, setFontZoom] = useState<0.9 | 1 | 1.1>(1)
 
-  const points = [
-    {
-      percent: 25,
-      label: 'S',
-      onClick: () => {
-        setFontZoom(0.5)
+  const points: TPoint[] = useMemo(
+    () => [
+      {
+        percent: 25,
+        label: 'S',
+        onClick: () => {
+          setFontZoom(0.9)
+        },
       },
-    },
-    {
-      percent: 50,
-      isDefault: true,
-      label: 'M',
-      onClick: () => {
-        setFontZoom(1)
+      {
+        percent: 50,
+        isDefault: true,
+        label: 'M',
+        onClick: () => {
+          setFontZoom(1)
+        },
       },
-    },
-    {
-      percent: 75,
-      label: 'L',
-      onClick: () => {
-        setFontZoom(1.5)
+      {
+        percent: 75,
+        label: 'L',
+        onClick: () => {
+          setFontZoom(1.1)
+        },
       },
-    },
-  ]
+    ],
+    [],
+  )
 
   useEffect(() => {
-    document.documentElement.setAttribute('data-font-zoom', String(fontZoom))
+    const root = document.querySelector(':root') as HTMLElement
+
+    if (!root) return
+
+    root.style.setProperty('--font-zoom', String(fontZoom))
   }, [fontZoom])
 
   return (
