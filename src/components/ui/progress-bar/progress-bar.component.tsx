@@ -12,10 +12,11 @@ export const ProgressBar: FC<IProgressBar> = ({ percent, maxWidth }) => {
   const wrapRef = useRef<HTMLDivElement>(null)
   const progressRef = useRef<HTMLDivElement>(null)
 
-  const { mouseDownHandler, mouseUpHandler, draggerPosition } = useSlider({
+  const { handlers, draggerPosition } = useSlider({
     maxWidth,
     percent,
     wrap: wrapRef,
+    isInteract: true,
   })
 
   useEffect(() => {
@@ -28,12 +29,7 @@ export const ProgressBar: FC<IProgressBar> = ({ percent, maxWidth }) => {
   }, [draggerPosition, isDrawProgress, maxWidth])
 
   return (
-    <div
-      ref={wrapRef}
-      onMouseDown={mouseDownHandler}
-      onMouseUp={mouseUpHandler}
-      className={styles.box}
-    >
+    <div ref={wrapRef} className={styles.box} {...handlers}>
       <div className={styles.track} />
       <div ref={progressRef} className={styles.progress} />
 

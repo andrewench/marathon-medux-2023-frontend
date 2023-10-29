@@ -2,15 +2,13 @@
   @apply font-rubik text-[28px] text-marathon-light font-medium;
 }
 
-.text {
-  @apply text-sm text-marathon-light;
-}
-
 .label {
   @apply mr-1;
 }
 
 .contrast {
+  @apply text-sm text-marathon-light;
+
   & > svg {
     @apply inline-block mr-3;
   }
@@ -22,8 +20,4 @@
 
 .divider {
   @apply w-[2px] h-4 bg-[#bccfdb];
-}
-
-.size {
-  @apply gap-3 mr-5;
 }

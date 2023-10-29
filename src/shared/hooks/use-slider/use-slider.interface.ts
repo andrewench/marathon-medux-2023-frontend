@@ -4,4 +4,5 @@ export interface ISlider {
   maxWidth: number
   wrap: RefObject<HTMLDivElement>
   percent: number
+  isInteract: boolean
 }

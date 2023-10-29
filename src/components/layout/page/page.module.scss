@@ -7,8 +7,9 @@
 }
 
 .content {
-  @apply grid;
+  @apply grid pr-10;
 
   grid-template-columns: #{$SIDEBAR_WIDTH} 1fr;
   grid-column: 1 / -1;
+  grid-row: 2 / -1;
 }

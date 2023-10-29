@@ -1,3 +1,5 @@
+'use client'
+
 import { FC } from 'react'
 
 import { PageTitle } from '@/components/shared/page-title/page-title.component'

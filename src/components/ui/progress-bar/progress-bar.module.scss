@@ -1,9 +1,9 @@
 .box {
-  @apply relative min-w-[100px] h-[12px] hover:cursor-pointer;
+  @apply relative h-[12px] hover:cursor-pointer;
 }
 
 .track {
-  @apply absolute left-0 top-1 w-[100px] h-1 rounded-[2px] bg-marathon-gray;
+  @apply absolute left-0 top-1 w-full h-1 rounded-[2px] bg-marathon-gray;
 }
 
 .progress {

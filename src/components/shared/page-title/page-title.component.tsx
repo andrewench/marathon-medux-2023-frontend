@@ -2,13 +2,11 @@
 
 import { FC } from 'react'
 
-import cn from 'clsx'
-
 import { Flex } from '@/components/layout'
 
-import { ProgressBar } from '@/components/ui'
+import { FontZoomer } from '@/components/ui'
 
-import { FontIcon, GlassesIcon } from '@/components/icons'
+import { GlassesIcon } from '@/components/icons'
 
 import styles from './page-title.module.scss'
 
@@ -18,20 +16,14 @@ export const PageTitle: FC<{ title: string }> = ({ title }) => {
       <h1 className={styles.heading}>{title}</h1>
 
       <Flex align="center" className={styles.actions}>
-        <button className={cn(styles.text, styles.contrast)}>
+        <button className={styles.contrast}>
           <GlassesIcon />
           Increase contrast
         </button>
 
         <div className={styles.divider} />
 
-        <Flex align="center" className={styles.size}>
-          <FontIcon />
-
-          <label className={cn(styles.text, styles.label)}>Font size</label>
-
-          <ProgressBar percent={50} maxWidth={100} />
-        </Flex>
+        <FontZoomer />
       </Flex>
     </Flex>
   )
