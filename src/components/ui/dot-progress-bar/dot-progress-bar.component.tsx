@@ -8,7 +8,11 @@ import type { IDotProgressBar } from './dot-progress-bar.interface'
 
 import styles from './dot-progress-bar.module.scss'
 
-export const DotProgressBar: FC<IDotProgressBar> = ({ maxWidth, points }) => {
+export const DotProgressBar: FC<IDotProgressBar> = ({
+  currentPercent,
+  maxWidth,
+  points,
+}) => {
   const [isDrawProgress, setDrawProgress] = useState<boolean>(false)
 
   const wrapRef = useRef<HTMLDivElement>(null)
@@ -53,7 +57,9 @@ export const DotProgressBar: FC<IDotProgressBar> = ({ maxWidth, points }) => {
           ))}
 
           <div
-            style={{ left: `${draggerPosition - 8}px` }}
+            style={{
+              left: `${calculateProgress(maxWidth, currentPercent) - 8}px`,
+            }}
             className={styles.drag}
           />
         </>

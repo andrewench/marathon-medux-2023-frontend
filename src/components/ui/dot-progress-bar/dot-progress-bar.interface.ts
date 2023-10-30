@@ -1,4 +1,7 @@
+import { type TZoomValue } from '@/shared/types'
+
 export type TPoint = {
+  zoomValue: TZoomValue
   percent: number
   onClick: () => void
   label?: string
@@ -6,6 +9,7 @@ export type TPoint = {
 }
 
 export interface IDotProgressBar {
+  currentPercent: number
   maxWidth: number
   points: TPoint[]
 }
