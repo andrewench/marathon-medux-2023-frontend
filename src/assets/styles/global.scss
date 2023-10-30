@@ -10,6 +10,10 @@
   .page {
     @apply min-h-screen bg-marathon-background;
   }
+
+  .header-button {
+    @apply w-8 h-8 hover:bg-marathon-gray rounded-[4px] transition-colors duration-150;
+  }
 }
 
 @layer utilities {

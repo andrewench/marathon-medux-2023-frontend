@@ -6,9 +6,11 @@ import Link from 'next/link'
 import { FC } from 'react'
 import { FormProvider, useForm } from 'react-hook-form'
 
+import cn from 'clsx'
+
 import { Avatar } from '@/components/shared'
 
-import { SearchField } from '@/components/ui'
+import { SearchField, ThemeSwitcher } from '@/components/ui'
 
 import { BellIcon, ChevronDownIcon } from '@/components/icons'
 
@@ -49,7 +51,9 @@ export const Header: FC = () => {
       </div>
 
       <Flex align="center" className={styles.profile}>
-        <button className={styles.button}>
+        <ThemeSwitcher />
+
+        <button className={cn('header-button', styles.button, styles.notify)}>
           <BellIcon />
         </button>
 
@@ -60,7 +64,7 @@ export const Header: FC = () => {
           <p className={styles.specialty}>Surgeon</p>
         </div>
 
-        <button className={styles.button}>
+        <button className={cn('header-button', styles.button, styles.drop)}>
           <ChevronDownIcon />
         </button>
       </Flex>

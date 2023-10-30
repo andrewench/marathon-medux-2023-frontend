@@ -28,6 +28,10 @@
   font-size: calc(0.875rem * var(--font-zoom));
 }
 
+.notify {
+  @apply pl-2;
+}
+
 .profile {
   @apply gap-5 mr-10;
 
@@ -48,4 +52,8 @@
   @apply uppercase text-marathon-light;
 
   font-size: calc(0.625rem * var(--font-zoom));
+}
+
+.drop {
+  @apply pl-[9px];
 }
