@@ -5,6 +5,7 @@ import {
   FinancesIcon,
   MessageIcon,
   PeopleIcon,
+  SettingsIcon,
   StarIcon,
 } from '@/components/icons'
 
@@ -43,5 +44,10 @@ export const SideBarList = [
     href: '/finances',
     label: 'Finances',
     icon: <FinancesIcon />,
+  },
+  {
+    href: '/settings',
+    label: 'Settings',
+    icon: <SettingsIcon />,
   },
 ]
