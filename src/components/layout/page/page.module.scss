@@ -3,13 +3,28 @@
 .page {
   @apply grid;
 
-  grid-template: 100px 40px 1fr / 0 #{$SIDEBAR_WIDTH} 1fr;
+  grid-template-rows: 100px 40px 1fr;
+
+  &:not(.minimized) {
+    grid-template-columns: 0 #{$SIDEBAR_WIDTH} 1fr;
+  }
+
+  &.minimized {
+    grid-template-columns: 0 #{$SIDEBAR_MIN_WIDTH} 1fr;
+  }
 }
 
 .content {
   @apply grid pr-10;
 
-  grid-template-columns: #{$SIDEBAR_WIDTH} 1fr;
   grid-column: 1 / -1;
   grid-row: 2 / -1;
+
+  &:not(.minimized) {
+    grid-template-columns: #{$SIDEBAR_WIDTH} 1fr;
+  }
+
+  &.minimized {
+    grid-template-columns: #{$SIDEBAR_MIN_WIDTH} 1fr;
+  }
 }

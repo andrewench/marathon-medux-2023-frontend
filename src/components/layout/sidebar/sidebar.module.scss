@@ -1,9 +1,31 @@
 .box {
-  @apply px-10;
+  @apply relative border-r-[1px];
+
+  &:not(.minimized) {
+    @apply px-10;
+  }
+
+  border-image: linear-gradient(
+      to bottom,
+      transparent 10%,
+      #9ea7ac30,
+      transparent 95%
+    )
+    0 1;
+
+  &:hover {
+    .themeSwitcher {
+      @apply visible opacity-100 translate-y-0;
+    }
+  }
 }
 
 .emergency {
   @apply gap-4;
+
+  &.minimized {
+    @apply pl-5;
+  }
 }
 
 .help {
@@ -13,5 +35,25 @@
 }
 
 .menu {
-  @apply mt-4;
+  @apply mt-5;
+
+  &.minimized {
+    @apply pl-6;
+  }
+}
+
+.themeSwitcher {
+  @apply absolute -right-[13px] top-[calc(50%-10px)] invisible opacity-0 translate-y-5 transition-transform duration-500 p-1 bg-marathon-gray rounded-[4px] text-marathon-gray;
+
+  & > svg {
+    &.minimized {
+      @apply rotate-180;
+    }
+
+    &.dark {
+      & > path {
+        stroke: #e4eaf0;
+      }
+    }
+  }
 }

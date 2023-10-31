@@ -8,13 +8,17 @@ import { FormProvider, useForm } from 'react-hook-form'
 
 import cn from 'clsx'
 
+import { Flex } from '@/components/layout'
+
 import { Avatar } from '@/components/shared'
 
 import { SearchField, ThemeSwitcher } from '@/components/ui'
 
 import { BellIcon, ChevronDownIcon } from '@/components/icons'
 
-import { Flex } from '../flex/flex.layout'
+import { useAppSelector } from '@/shared/hooks'
+
+import { app } from '@/store/slices'
 
 import styles from './header.module.scss'
 
@@ -23,9 +27,19 @@ export const Header: FC = () => {
     mode: 'onChange',
   })
 
+  const { sideBar } = useAppSelector(app)
+
   return (
-    <header className={styles.header}>
-      <div className={styles.left}>
+    <header
+      className={cn(styles.header, {
+        [styles.minimized]: !sideBar.isOpen,
+      })}
+    >
+      <div
+        className={cn(styles.left, {
+          [styles.minimized]: !sideBar.isOpen,
+        })}
+      >
         <Link href="/dashboard" draggable={false} className={styles.link}>
           <Image
             src="/logo.svg"
@@ -34,12 +48,26 @@ export const Header: FC = () => {
             alt="Medux Logo"
             priority={true}
             draggable={false}
-            className={styles.logo}
+            className={cn(styles.original, styles.logo, {
+              [styles.hide]: !sideBar.isOpen,
+            })}
+          />
+
+          <Image
+            src="/logo-mini.svg"
+            width={41}
+            height={42}
+            alt="Medux Logo"
+            priority={true}
+            draggable={false}
+            className={cn(styles.logo, {
+              [styles.hide]: sideBar.isOpen,
+            })}
           />
         </Link>
 
         <FormProvider {...methods}>
-          <form>
+          <form className={styles.searchBox}>
             <SearchField<{ search: string }>
               type="text"
               field="search"

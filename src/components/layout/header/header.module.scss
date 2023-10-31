@@ -4,22 +4,52 @@
   @apply content-center;
 
   display: inherit;
-  grid-template-columns: #{$SIDEBAR_WIDTH} 490px 1fr;
   grid-column: 1 / -1;
+
+  &:not(.minimized) {
+    grid-template-columns: #{$SIDEBAR_WIDTH} 490px 1fr;
+  }
+
+  &.minimized {
+    grid-template-columns: #{$SIDEBAR_MIN_WIDTH} 490px 1fr;
+  }
 }
 
 .left {
   display: inherit;
-  grid-template-columns: #{$SIDEBAR_WIDTH} 490px;
   grid-column: 1 / span 2;
+
+  &:not(.minimized) {
+    grid-template-columns: #{$SIDEBAR_WIDTH} 490px;
+  }
+
+  &.minimized {
+    grid-template-columns: #{$SIDEBAR_MIN_WIDTH} 490px;
+  }
 }
 
 .link {
-  @apply focus:outline-none;
+  @apply relative block focus:outline-none;
 }
 
 .logo {
-  @apply mx-auto;
+  @apply absolute;
+
+  &:not(.original) {
+    @apply left-5;
+  }
+
+  &.original {
+    @apply left-10;
+  }
+
+  &.hide {
+    @apply invisible opacity-0 pointer-events-none;
+  }
+}
+
+.searchBox {
+  @apply pl-5;
 }
 
 .search {

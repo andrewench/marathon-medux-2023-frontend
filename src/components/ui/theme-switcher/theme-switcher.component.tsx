@@ -6,11 +6,15 @@ import { PaletteIcon } from '@/components/icons'
 
 import { AppConstant } from '@/shared/constants'
 
+import { useActions } from '@/shared/hooks'
+
 import { TThemeMode } from '@/shared/types'
 
 import styles from './theme-switcher.module.scss'
 
 export const ThemeSwitcher: FC = () => {
+  const { setThemeMode } = useActions()
+
   const [theme, setTheme] = useState<TThemeMode>(() => {
     const {
       storage,
@@ -34,14 +38,23 @@ export const ThemeSwitcher: FC = () => {
     return currentTheme
   })
 
-  const toggleTheme = () =>
-    theme === 'light' ? setTheme('dark') : setTheme('light')
+  const toggleTheme = () => {
+    if (theme === 'light') {
+      setTheme('dark')
+      setThemeMode('dark')
+    } else {
+      setTheme('light')
+      setThemeMode('light')
+    }
+  }
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme)
 
+    setThemeMode(theme)
+
     localStorage.setItem(AppConstant.storage.keys.THEME_PREFIX, theme)
-  }, [theme])
+  }, [setThemeMode, theme])
 
   return (
     <button
