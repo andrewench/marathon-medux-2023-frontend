@@ -8,10 +8,13 @@
       "@/components/ui": ["components/ui"],
       "@/components/providers": ["components/providers"],
       "@/shared/constants": ["shared/constants"],
+      "@/shared/presets": ["shared/presets"],
       "@/shared/hooks": ["shared/hooks"],
       "@/shared/fonts": ["shared/fonts"],
       "@/shared/utils": ["shared/utils"],
       "@/shared/types": ["shared/types"],
+      "@/store": ["store"],
+      "@/store/slices": ["store/slices"],
       "@/*": ["./*"]
     }
   }

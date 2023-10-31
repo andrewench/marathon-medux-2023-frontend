@@ -1,1 +1,5 @@
+export { DocumentLayout } from './document/document.layout'
 export { Flex } from './flex/flex.layout'
+export { PageLayout } from './page/page.layout'
+export { Header } from './header/header.layout'
+export { SideBar } from './sidebar/sidebar.layout'

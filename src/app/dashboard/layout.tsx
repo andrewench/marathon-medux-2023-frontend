@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 
 import { FC, PropsWithChildren } from 'react'
 
-import { PageLayout } from '@/components/layout/page/page.layout'
+import { DocumentLayout } from '@/components/layout'
 
 export const metadata: Metadata = {
   title: 'Medux | Dashboard',
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 }
 
 const DashboardLayout: FC<PropsWithChildren> = ({ children }) => (
-  <PageLayout>{children}</PageLayout>
+  <DocumentLayout>{children}</DocumentLayout>
 )
 
 export default DashboardLayout

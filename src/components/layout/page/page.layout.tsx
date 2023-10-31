@@ -1,41 +1,32 @@
 'use client'
 
-import { FC } from 'react'
+import { FC, PropsWithChildren } from 'react'
 
 import cn from 'clsx'
 
-import { PageIndicator } from '@/components/shared'
+import { Header, SideBar } from '@/components/layout'
 
-import { roboto, rubik } from '@/shared/fonts'
-
-import { PropsWithClassNameAndChildren } from '@/shared/types'
-
-import { Header } from '../header/header.layout'
-import { SideBar } from '../sidebar/sidebar.layout'
-
-import '@/assets/styles/global.scss'
+import { PageIndicator, PageTitle } from '@/components/shared'
 
 import styles from './page.module.scss'
 
-export const PageLayout: FC<PropsWithClassNameAndChildren> = ({
+export const PageLayout: FC<PropsWithChildren<{ title: string }>> = ({
+  title,
   children,
-  className,
 }) => {
   return (
-    <html lang="en" data-theme="light">
-      <body className={cn(rubik.variable, roboto.variable, className)}>
-        <div className={cn(styles.page, 'page')}>
-          <PageIndicator />
+    <div className={cn(styles.page, 'page')}>
+      <PageIndicator />
 
-          <Header />
+      <Header />
 
-          <div className={styles.content}>
-            <SideBar />
+      <div className={styles.content}>
+        <SideBar />
 
-            {children}
-          </div>
-        </div>
-      </body>
-    </html>
+        <PageTitle title={title} />
+
+        {children}
+      </div>
+    </div>
   )
 }

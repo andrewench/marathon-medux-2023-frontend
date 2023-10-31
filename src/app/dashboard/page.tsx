@@ -2,13 +2,15 @@
 
 import { FC } from 'react'
 
-import { PageTitle } from '@/components/shared/page-title/page-title.component'
+import { PageLayout } from '@/components/layout'
+
+import { MainProvider } from '@/components/providers'
 
 const Page: FC = () => {
   return (
-    <div>
-      <PageTitle title="Basic Doctor Dashboard" />
-    </div>
+    <MainProvider>
+      <PageLayout title="Basic Doctor Dashboard" />
+    </MainProvider>
   )
 }
 
