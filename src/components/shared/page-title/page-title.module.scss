@@ -1,15 +1,17 @@
 .box {
-  @apply h-10 pl-5;
+  @apply h-10 pl-5 max-lg:col-start-1 max-lg:col-span-full;
 }
 
 .heading {
-  @apply font-rubik text-marathon-light font-medium;
-
-  font-size: calc(1.75rem * var(--font-zoom));
+  @apply font-rubik text-marathon-light font-medium md:text-[calc(1.5rem*var(--font-zoom))] lg:text-[calc(1.75rem*var(--font-zoom))];
 }
 
 .label {
   @apply mr-1;
+}
+
+.actions {
+  @apply flex items-center gap-5 max-lg:hidden;
 }
 
 .contrast {
@@ -22,10 +24,10 @@
   }
 }
 
-.actions {
-  @apply gap-5;
-}
-
 .divider {
   @apply w-[2px] h-4 bg-[#bccfdb];
+}
+
+.filter {
+  @apply lg:hidden;
 }

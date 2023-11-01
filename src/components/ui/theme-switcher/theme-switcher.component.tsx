@@ -25,10 +25,7 @@ export const ThemeSwitcher: FC = () => {
   }
 
   return (
-    <button
-      onClick={toggleTheme}
-      className={cn('header-button', styles.button)}
-    >
+    <button onClick={toggleTheme} className={cn('button', styles.button)}>
       <PaletteIcon />
     </button>
   )

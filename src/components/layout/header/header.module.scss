@@ -55,7 +55,7 @@
 }
 
 .search {
-  @apply h-10 rounded-[8px] px-12 w-[490px] focus:outline-none;
+  @apply h-10 rounded-[8px] px-12 lg:w-[490px] md:w-[390px] focus:outline-none;
 
   font-size: calc(0.875rem * var(--font-zoom));
 }

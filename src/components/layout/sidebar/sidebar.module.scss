@@ -1,5 +1,7 @@
+@import '../../../assets/styles/_variables';
+
 .box {
-  @apply relative border-r-[1px];
+  @apply relative border-r-[1px] max-lg:hidden;
 
   &:not(.minimized) {
     @apply px-10;

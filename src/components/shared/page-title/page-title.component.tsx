@@ -2,11 +2,13 @@
 
 import { FC } from 'react'
 
-import { Flex } from '@/components/layout'
+import cn from 'clsx'
 
-import { FontZoomer } from '@/components/ui'
+import { DropMenu, Flex } from '@/components/layout'
 
-import { GlassesIcon } from '@/components/icons'
+import { DropMenuItem, FontZoomer, SquareButton } from '@/components/ui'
+
+import { FilterIcon, FontIcon, GlassesIcon } from '@/components/icons'
 
 import styles from './page-title.module.scss'
 
@@ -15,7 +17,7 @@ export const PageTitle: FC<{ title: string }> = ({ title }) => {
     <Flex align="center" content="space-between" className={styles.box}>
       <h1 className={styles.heading}>{title}</h1>
 
-      <Flex align="center" className={styles.actions}>
+      <div className={styles.actions}>
         <button className={styles.contrast}>
           <GlassesIcon />
           Increase contrast
@@ -24,7 +26,18 @@ export const PageTitle: FC<{ title: string }> = ({ title }) => {
         <div className={styles.divider} />
 
         <FontZoomer />
-      </Flex>
+      </div>
+
+      <div className={cn('drop-menu', styles.filter)}>
+        <SquareButton>
+          <FilterIcon />
+        </SquareButton>
+
+        <DropMenu position="right">
+          <DropMenuItem label="Increase contrast" icon={<GlassesIcon />} />
+          <DropMenuItem label="Font size" icon={<FontIcon />} />
+        </DropMenu>
+      </div>
     </Flex>
   )
 }

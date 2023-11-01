@@ -40,20 +40,20 @@ export const HeaderProfile: FC = () => {
     <Flex align="center" className={styles.profile}>
       <ThemeSwitcher />
 
-      <button className={cn('header-button', styles.button, styles.notify)}>
+      <button className={cn('button', styles.button, styles.notify)}>
         <BellIcon />
       </button>
 
       <Avatar />
 
-      <div>
+      <div className={styles.meta}>
         <p className={styles.username}>Nicholas Doyle</p>
         <p className={styles.specialty}>Surgeon</p>
       </div>
 
-      <div className={styles.menu}>
+      <div className="drop-menu">
         <div className={styles.dropBox}>
-          <button className={cn('header-button', styles.button, styles.drop)}>
+          <button className={cn('button', styles.button, styles.drop)}>
             <ChevronDownIcon />
           </button>
         </div>
@@ -63,8 +63,13 @@ export const HeaderProfile: FC = () => {
             label="Toggle Theme"
             icon={<PaletteIcon />}
             onClick={toggleTheme}
+            className={styles.themeItem}
           />
-          <DropMenuItem label="Notifications" icon={<BellIcon />} />
+          <DropMenuItem
+            label="Notifications"
+            icon={<BellIcon />}
+            className={styles.notifyItem}
+          />
           <DropMenuItem label="Logout" icon={<LogoutIcon />} />
         </DropMenu>
       </div>

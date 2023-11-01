@@ -10,9 +10,22 @@
   .page {
     @apply min-h-screen bg-marathon-background;
   }
+}
 
-  .header-button {
+@layer components {
+  .button {
     @apply w-10 h-10 hover:bg-marathon-gray rounded-[4px] transition-colors duration-150;
+  }
+
+  .drop-menu {
+    @apply relative;
+  }
+
+  .drop-button {
+  }
+
+  .drop-list {
+    /* @apply  */
   }
 }
 

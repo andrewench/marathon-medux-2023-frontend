@@ -1,5 +1,5 @@
 .notify {
-  @apply pl-3;
+  @apply pl-3 max-lg:hidden;
 }
 
 .profile {
@@ -10,6 +10,10 @@
   & > .button {
     @apply first:mr-3 last:ml-3;
   }
+}
+
+.meta {
+  @apply max-xl:hidden;
 }
 
 .username {
@@ -24,10 +28,6 @@
   font-size: calc(0.625rem * var(--font-zoom));
 }
 
-.menu {
-  @apply relative;
-}
-
 .dropBox {
   @apply py-3;
 
@@ -40,4 +40,9 @@
 
 .drop {
   @apply pl-[13px];
+}
+
+.themeItem,
+.notifyItem {
+  @apply lg:hidden;
 }
