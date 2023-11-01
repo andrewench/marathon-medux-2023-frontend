@@ -17,9 +17,25 @@ import {
   PaletteIcon,
 } from '@/components/icons'
 
+import { useActions, useAppSelector } from '@/shared/hooks'
+
+import { app } from '@/store/slices'
+
 import styles from './header-profile.module.scss'
 
 export const HeaderProfile: FC = () => {
+  const { setThemeMode } = useActions()
+
+  const { themeMode } = useAppSelector(app)
+
+  const toggleTheme = () => {
+    if (themeMode === 'light') {
+      setThemeMode('dark')
+    } else {
+      setThemeMode('light')
+    }
+  }
+
   return (
     <Flex align="center" className={styles.profile}>
       <ThemeSwitcher />
@@ -43,7 +59,11 @@ export const HeaderProfile: FC = () => {
         </div>
 
         <DropMenu position="right">
-          <DropMenuItem label="Toggle Theme" icon={<PaletteIcon />} />
+          <DropMenuItem
+            label="Toggle Theme"
+            icon={<PaletteIcon />}
+            onClick={toggleTheme}
+          />
           <DropMenuItem label="Notifications" icon={<BellIcon />} />
           <DropMenuItem label="Logout" icon={<LogoutIcon />} />
         </DropMenu>

@@ -1,60 +1,28 @@
-import { FC, useEffect, useState } from 'react'
+import { FC } from 'react'
 
 import cn from 'clsx'
 
 import { PaletteIcon } from '@/components/icons'
 
-import { AppConstant } from '@/shared/constants'
+import { useActions, useAppSelector } from '@/shared/hooks'
+import '@/shared/hooks'
 
-import { useActions } from '@/shared/hooks'
-
-import { TThemeMode } from '@/shared/types'
+import { app } from '@/store/slices'
 
 import styles from './theme-switcher.module.scss'
 
 export const ThemeSwitcher: FC = () => {
   const { setThemeMode } = useActions()
 
-  const [theme, setTheme] = useState<TThemeMode>(() => {
-    const {
-      storage,
-      theme: { DEFAULT_VALUE },
-    } = AppConstant
-
-    if (typeof window === 'undefined') return DEFAULT_VALUE
-
-    const currentTheme = localStorage.getItem(
-      storage.keys.THEME_PREFIX,
-    ) as TThemeMode
-
-    if (!currentTheme) return DEFAULT_VALUE
-
-    const isValidValues = AppConstant.theme.VALUES.some(
-      value => value === currentTheme,
-    )
-
-    if (!isValidValues) return DEFAULT_VALUE
-
-    return currentTheme
-  })
+  const { themeMode } = useAppSelector(app)
 
   const toggleTheme = () => {
-    if (theme === 'light') {
-      setTheme('dark')
+    if (themeMode === 'light') {
       setThemeMode('dark')
     } else {
-      setTheme('light')
       setThemeMode('light')
     }
   }
-
-  useEffect(() => {
-    document.documentElement.setAttribute('data-theme', theme)
-
-    setThemeMode(theme)
-
-    localStorage.setItem(AppConstant.storage.keys.THEME_PREFIX, theme)
-  }, [setThemeMode, theme])
 
   return (
     <button

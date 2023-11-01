@@ -49,11 +49,9 @@
     &.minimized {
       @apply rotate-180;
     }
-
-    &.dark {
-      & > path {
-        stroke: #e4eaf0;
-      }
-    }
   }
+}
+
+html[data-theme='dark'] .themeSwitcher > svg > path {
+  stroke: #e4eaf0;
 }

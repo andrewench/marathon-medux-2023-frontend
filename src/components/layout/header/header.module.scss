@@ -16,6 +16,8 @@
 }
 
 .left {
+  @apply content-center;
+
   display: inherit;
   grid-column: 1 / span 2;
 

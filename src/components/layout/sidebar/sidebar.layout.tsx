@@ -64,7 +64,6 @@ export const SideBar: FC = () => {
         <DoubleChevronLeftIcon
           className={cn({
             [styles.minimized]: !sideBar.isOpen,
-            [styles.dark]: themeMode === 'dark',
           })}
         />
       </button>
