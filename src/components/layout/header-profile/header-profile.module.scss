@@ -1,0 +1,43 @@
+.notify {
+  @apply pl-3;
+}
+
+.profile {
+  @apply gap-5 mr-10;
+
+  grid-column: -1;
+
+  & > .button {
+    @apply first:mr-3 last:ml-3;
+  }
+}
+
+.username {
+  @apply font-medium text-marathon-light;
+
+  font-size: calc(1rem * var(--font-zoom));
+}
+
+.specialty {
+  @apply uppercase text-marathon-light;
+
+  font-size: calc(0.625rem * var(--font-zoom));
+}
+
+.menu {
+  @apply relative;
+}
+
+.dropBox {
+  @apply py-3;
+
+  &:hover {
+    & ~ ul {
+      @apply visible;
+    }
+  }
+}
+
+.drop {
+  @apply pl-[13px];
+}

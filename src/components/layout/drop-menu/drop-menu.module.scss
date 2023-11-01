@@ -1,0 +1,11 @@
+.box {
+  @apply invisible absolute top-16 p-5 bg-marathon-light-background z-[1000] rounded-marathon-8 w-[240px] hover:visible;
+
+  &.left {
+    @apply left-0;
+  }
+
+  &.right {
+    @apply right-0;
+  }
+}

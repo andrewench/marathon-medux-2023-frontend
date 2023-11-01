@@ -1,0 +1,9 @@
+.button {
+  @apply flex items-center px-2 gap-3 block w-full py-2 rounded-[4px] hover:bg-marathon-gray transition-colors duration-150 text-marathon-light;
+
+  font-size: calc(16px * var(--font-zoom));
+}
+
+.iconBox {
+  @apply w-[30px] h-[30px];
+}

@@ -8,13 +8,9 @@ import { FormProvider, useForm } from 'react-hook-form'
 
 import cn from 'clsx'
 
-import { Flex } from '@/components/layout'
+import { HeaderProfile } from '@/components/layout'
 
-import { Avatar } from '@/components/shared'
-
-import { SearchField, ThemeSwitcher } from '@/components/ui'
-
-import { BellIcon, ChevronDownIcon } from '@/components/icons'
+import { SearchField } from '@/components/ui'
 
 import { useAppSelector } from '@/shared/hooks'
 
@@ -78,24 +74,7 @@ export const Header: FC = () => {
         </FormProvider>
       </div>
 
-      <Flex align="center" className={styles.profile}>
-        <ThemeSwitcher />
-
-        <button className={cn('header-button', styles.button, styles.notify)}>
-          <BellIcon />
-        </button>
-
-        <Avatar />
-
-        <div>
-          <p className={styles.username}>Nicholas Doyle</p>
-          <p className={styles.specialty}>Surgeon</p>
-        </div>
-
-        <button className={cn('header-button', styles.button, styles.drop)}>
-          <ChevronDownIcon />
-        </button>
-      </Flex>
+      <HeaderProfile />
     </header>
   )
 }

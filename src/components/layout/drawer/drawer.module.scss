@@ -1,0 +1,11 @@
+.box {
+  @apply absolute top-0 w-[340px] h-screen bg-marathon-gray z-[9000];
+
+  &.left {
+    @apply left-0;
+  }
+
+  &.right {
+    @apply right-0;
+  }
+}

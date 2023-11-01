@@ -57,33 +57,3 @@
 
   font-size: calc(0.875rem * var(--font-zoom));
 }
-
-.notify {
-  @apply pl-2;
-}
-
-.profile {
-  @apply gap-5 mr-10;
-
-  grid-column: -1;
-
-  & > .button {
-    @apply first:mr-3 last:ml-3;
-  }
-}
-
-.username {
-  @apply font-medium text-marathon-light;
-
-  font-size: calc(1rem * var(--font-zoom));
-}
-
-.specialty {
-  @apply uppercase text-marathon-light;
-
-  font-size: calc(0.625rem * var(--font-zoom));
-}
-
-.drop {
-  @apply pl-[9px];
-}
