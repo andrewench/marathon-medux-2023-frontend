@@ -13,19 +13,22 @@
 }
 
 @layer components {
-  .button {
-    @apply w-10 h-10 hover:bg-marathon-gray rounded-[4px] transition-colors duration-150;
-  }
-
   .drop-menu {
     @apply relative;
   }
 
-  .drop-button {
+  .button {
+    @apply w-10 h-10 hover:bg-marathon-gray rounded-[4px] transition-colors duration-150;
   }
 
-  .drop-list {
-    /* @apply  */
+  .drop-button {
+    @apply py-3;
+
+    &:hover {
+      & ~ ul {
+        @apply visible;
+      }
+    }
   }
 }
 

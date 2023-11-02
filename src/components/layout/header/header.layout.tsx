@@ -8,9 +8,11 @@ import { FormProvider, useForm } from 'react-hook-form'
 
 import cn from 'clsx'
 
-import { HeaderProfile } from '@/components/layout'
+import { HeaderProfile, Logo } from '@/components/layout'
 
 import { SearchField } from '@/components/ui'
+
+import { MenuIcon } from '@/components/icons'
 
 import { useAppSelector } from '@/shared/hooks'
 
@@ -36,31 +38,11 @@ export const Header: FC = () => {
           [styles.minimized]: !sideBar.isOpen,
         })}
       >
-        <Link href="/dashboard" draggable={false} className={styles.link}>
-          <Image
-            src="/logo.svg"
-            width={164}
-            height={42}
-            alt="Medux Logo"
-            priority={true}
-            draggable={false}
-            className={cn(styles.original, styles.logo, {
-              [styles.hide]: !sideBar.isOpen,
-            })}
-          />
+        <Logo responsive />
 
-          <Image
-            src="/logo-mini.svg"
-            width={41}
-            height={42}
-            alt="Medux Logo"
-            priority={true}
-            draggable={false}
-            className={cn(styles.logo, {
-              [styles.hide]: sideBar.isOpen,
-            })}
-          />
-        </Link>
+        <button className={styles.mobileMenu}>
+          <MenuIcon />
+        </button>
 
         <FormProvider {...methods}>
           <form className={styles.searchBox}>

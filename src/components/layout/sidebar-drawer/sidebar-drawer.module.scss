@@ -1,0 +1,13 @@
+.drawer {
+  @apply grid px-5;
+
+  grid-template-rows: 100px 40px 1fr;
+}
+
+.content {
+  @apply px-5;
+}
+
+.close {
+  @appy pt-[2px];
+}

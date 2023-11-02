@@ -29,9 +29,11 @@ export const PageTitle: FC<{ title: string }> = ({ title }) => {
       </div>
 
       <div className={cn('drop-menu', styles.filter)}>
-        <SquareButton>
-          <FilterIcon />
-        </SquareButton>
+        <div className="drop-button">
+          <SquareButton>
+            <FilterIcon />
+          </SquareButton>
+        </div>
 
         <DropMenu position="right">
           <DropMenuItem label="Increase contrast" icon={<GlassesIcon />} />

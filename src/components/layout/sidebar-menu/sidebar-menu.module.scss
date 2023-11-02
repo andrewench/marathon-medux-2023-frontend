@@ -1,0 +1,7 @@
+.menu {
+  @apply mt-5;
+
+  &.minimized {
+    @apply pl-6;
+  }
+}

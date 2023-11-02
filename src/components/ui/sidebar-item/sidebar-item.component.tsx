@@ -14,7 +14,12 @@ import { type ISideBarItem } from './sidebar-item.interface'
 
 import styles from './sidebar-item.module.scss'
 
-export const SideBarItem: FC<ISideBarItem> = ({ href, label, icon }) => {
+export const SideBarItem: FC<ISideBarItem> = ({
+  href,
+  label,
+  icon,
+  responsive,
+}) => {
   const { sideBar } = useAppSelector(app)
 
   return (
@@ -23,14 +28,14 @@ export const SideBarItem: FC<ISideBarItem> = ({ href, label, icon }) => {
         href={href}
         draggable={false}
         className={cn(styles.link, {
-          [styles.minimized]: !sideBar.isOpen,
+          [styles.minimized]: !sideBar.isOpen && responsive,
         })}
       >
         <Flex align="center" content="center" className={styles.icon}>
           {icon}
         </Flex>
 
-        {sideBar.isOpen && label}
+        {responsive ? <>{sideBar.isOpen && label}</> : <>{label}</>}
       </Link>
     </li>
   )

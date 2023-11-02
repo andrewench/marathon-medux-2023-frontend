@@ -1,0 +1,13 @@
+.emergency {
+  @apply gap-4;
+
+  &.minimized {
+    @apply pl-5;
+  }
+}
+
+.help {
+  @apply text-marathon-light font-medium font-rubik w-min leading-[18px];
+
+  font-size: calc(1rem * var(--font-zoom));
+}

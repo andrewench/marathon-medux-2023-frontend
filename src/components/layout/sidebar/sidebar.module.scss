@@ -22,28 +22,6 @@
   }
 }
 
-.emergency {
-  @apply gap-4;
-
-  &.minimized {
-    @apply pl-5;
-  }
-}
-
-.help {
-  @apply text-marathon-light font-medium font-rubik w-min leading-[18px];
-
-  font-size: calc(1rem * var(--font-zoom));
-}
-
-.menu {
-  @apply mt-5;
-
-  &.minimized {
-    @apply pl-6;
-  }
-}
-
 .themeSwitcher {
   @apply absolute -right-[13px] top-[calc(50%-10px)] invisible opacity-0 translate-y-5 transition-transform duration-500 p-1 bg-marathon-gray rounded-[4px] text-marathon-gray;
 

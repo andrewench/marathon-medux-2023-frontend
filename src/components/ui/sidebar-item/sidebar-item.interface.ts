@@ -4,4 +4,5 @@ export interface ISideBarItem {
   href: string
   label: string
   icon: ReactNode
+  responsive?: boolean
 }

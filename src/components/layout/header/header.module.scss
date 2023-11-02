@@ -30,24 +30,8 @@
   }
 }
 
-.link {
-  @apply relative block focus:outline-none;
-}
-
-.logo {
-  @apply absolute;
-
-  &:not(.original) {
-    @apply left-5;
-  }
-
-  &.original {
-    @apply left-10;
-  }
-
-  &.hide {
-    @apply invisible opacity-0 pointer-events-none;
-  }
+.mobileMenu {
+  @apply lg:hidden pl-7;
 }
 
 .searchBox {
@@ -58,4 +42,14 @@
   @apply h-10 rounded-[8px] px-12 lg:w-[490px] md:w-[390px] focus:outline-none;
 
   font-size: calc(0.875rem * var(--font-zoom));
+}
+
+@media not all and (min-width: 1024px) {
+  .header {
+    grid-template-columns: 60px 490px 1fr !important;
+  }
+
+  .left {
+    grid-template-columns: 60px 490px !important;
+  }
 }

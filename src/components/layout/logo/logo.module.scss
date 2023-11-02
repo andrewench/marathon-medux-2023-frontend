@@ -1,0 +1,23 @@
+.link {
+  @apply relative block focus:outline-none;
+
+  &.hide {
+    @apply max-lg:hidden;
+  }
+}
+
+.logo {
+  @apply absolute;
+
+  &:not(.original) {
+    @apply left-5;
+  }
+
+  &.original {
+    @apply left-10;
+  }
+
+  &.hide {
+    @apply invisible opacity-0 pointer-events-none;
+  }
+}
