@@ -1,5 +1,5 @@
 .box {
-  @apply absolute top-0 w-[280px] h-screen bg-marathon-gray z-[9000] overflow-y-auto;
+  @apply fixed top-0 w-[280px] h-screen bg-marathon-gray z-[9000];
 
   &.left {
     @apply left-0 rounded-tr-[14px] rounded-br-[14px];

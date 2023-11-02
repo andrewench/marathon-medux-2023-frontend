@@ -30,6 +30,10 @@
       }
     }
   }
+
+  .scroll-bar {
+    @apply overflow-auto;
+  }
 }
 
 @layer utilities {
@@ -50,4 +54,20 @@ body {
   @apply scroll-smooth min-h-screen;
 
   -webkit-font-smoothing: antialiased;
+}
+
+body::-webkit-scrollbar {
+  @apply w-2 h-2 bg-marathon-background;
+}
+
+.scroll-bar::-webkit-scrollbar {
+  @apply w-[6px] h-[6px] bg-transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+  @apply rounded-[4px] bg-marathon-gray;
+}
+
+.scroll-bar::-webkit-scrollbar-thumb {
+  @apply rounded-[3px] bg-marathon-gray;
 }

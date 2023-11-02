@@ -1,6 +1,6 @@
 'use client'
 
-import { FC, PropsWithChildren } from 'react'
+import { FC, PropsWithChildren, useEffect, useState } from 'react'
 
 import cn from 'clsx'
 import { AnimatePresence } from 'framer-motion'
@@ -19,18 +19,38 @@ export const PageLayout: FC<PropsWithChildren<{ title: string }>> = ({
   title,
   children,
 }) => {
+  const [isRenderDrawer, setRenderDrawer] = useState<boolean>(() => {
+    if (typeof window === 'undefined') return false
+
+    if (window.innerWidth <= 1024) return true
+
+    return false
+  })
+
   const { sideBar } = useAppSelector(app)
 
+  useEffect(() => {
+    const resizeHandler = () => {
+      if (window.innerWidth <= 1024) {
+        if (isRenderDrawer) return
+
+        setRenderDrawer(true)
+      } else {
+        if (!isRenderDrawer) return
+
+        setRenderDrawer(false)
+      }
+    }
+
+    window.addEventListener('resize', resizeHandler)
+
+    return () => {
+      window.removeEventListener('resize', resizeHandler)
+    }
+  }, [isRenderDrawer])
+
   return (
-    <div
-      className={cn(
-        styles.page,
-        {
-          [styles.minimized]: !sideBar.isOpen,
-        },
-        'page',
-      )}
-    >
+    <div className={cn(styles.page, 'page')}>
       <PageIndicator />
 
       <Header />
@@ -40,9 +60,11 @@ export const PageLayout: FC<PropsWithChildren<{ title: string }>> = ({
           [styles.minimized]: !sideBar.isOpen,
         })}
       >
-        <SideBar />
+        {!isRenderDrawer && <SideBar />}
 
-        <AnimatePresence>{sideBar.isOpen && <SideBarDrawer />}</AnimatePresence>
+        <AnimatePresence>
+          {sideBar.isOpen && isRenderDrawer && <SideBarDrawer />}
+        </AnimatePresence>
 
         <PageTitle title={title} />
 

@@ -15,16 +15,10 @@
 }
 
 .content {
-  @apply grid pr-10;
+  @apply grid pr-5;
 
   grid-column: 1 / -1;
   grid-row: 2 / -1;
 
-  &:not(.minimized) {
-    grid-template-columns: #{$SIDEBAR_WIDTH} 1fr;
-  }
-
-  &.minimized {
-    grid-template-columns: #{$SIDEBAR_MIN_WIDTH} 1fr;
-  }
+  grid-template-columns: min-content 1fr;
 }

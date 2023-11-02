@@ -1,9 +1,9 @@
 .box {
-  @apply h-10 pl-5 max-lg:col-start-1 max-lg:col-span-full;
+  @apply h-10 pl-5 max-lg:col-span-full lg:col-start-2 lg:col-end-[-1];
 }
 
 .heading {
-  @apply font-rubik text-marathon-light font-medium md:text-[calc(1.5rem*var(--font-zoom))] lg:text-[calc(1.75rem*var(--font-zoom))];
+  @apply font-rubik text-marathon-light font-medium max-md:text-[calc(1.125rem*var(--font-zoom))] md:text-[calc(1.5rem*var(--font-zoom))] lg:text-[calc(1.75rem*var(--font-zoom))];
 }
 
 .label {
