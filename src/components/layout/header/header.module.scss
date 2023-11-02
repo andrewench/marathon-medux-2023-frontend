@@ -7,11 +7,11 @@
   grid-column: 1 / -1;
 
   &:not(.minimized) {
-    grid-template-columns: #{$SIDEBAR_WIDTH} 490px 1fr;
+    grid-template-columns: #{$SIDEBAR_WIDTH} minmax(min-content, 490px) 1fr;
   }
 
   &.minimized {
-    grid-template-columns: #{$SIDEBAR_MIN_WIDTH} 490px 1fr;
+    grid-template-columns: #{$SIDEBAR_MIN_WIDTH} minmax(min-content, 490px) 1fr;
   }
 }
 
@@ -22,11 +22,11 @@
   grid-column: 1 / span 2;
 
   &:not(.minimized) {
-    grid-template-columns: #{$SIDEBAR_WIDTH} 490px;
+    grid-template-columns: #{$SIDEBAR_WIDTH} minmax(min-content, 490px);
   }
 
   &.minimized {
-    grid-template-columns: #{$SIDEBAR_MIN_WIDTH} 490px;
+    grid-template-columns: #{$SIDEBAR_MIN_WIDTH} minmax(min-content, 490px);
   }
 }
 
@@ -35,7 +35,7 @@
 }
 
 .searchBox {
-  @apply pl-5;
+  @apply pl-5 max-md:hidden;
 }
 
 .search {
@@ -46,10 +46,10 @@
 
 @media not all and (min-width: 1024px) {
   .header {
-    grid-template-columns: 60px 490px 1fr !important;
+    grid-template-columns: 60px minmax(min-content, 490px) 1fr !important;
   }
 
   .left {
-    grid-template-columns: 60px 490px !important;
+    grid-template-columns: 60px minmax(min-content, 490px) !important;
   }
 }

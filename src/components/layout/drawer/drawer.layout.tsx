@@ -1,6 +1,9 @@
+'use client'
+
 import { FC } from 'react'
 
 import cn from 'clsx'
+import { AnimatePresence, motion } from 'framer-motion'
 
 import { PropsWithClassNameAndChildren } from '@/shared/types'
 
@@ -14,7 +17,11 @@ export const Drawer: FC<PropsWithClassNameAndChildren<IDrawer>> = ({
   className,
 }) => {
   return (
-    <div
+    <motion.div
+      initial={{ translateX: '-100%' }}
+      animate={{ translateX: 0 }}
+      exit={{ translateX: '-100%' }}
+      transition={{ duration: 0.3 }}
       className={cn(
         styles.box,
         {
@@ -25,6 +32,6 @@ export const Drawer: FC<PropsWithClassNameAndChildren<IDrawer>> = ({
       )}
     >
       {children}
-    </div>
+    </motion.div>
   )
 }

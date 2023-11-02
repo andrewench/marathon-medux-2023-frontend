@@ -3,8 +3,9 @@
 import { FC, PropsWithChildren } from 'react'
 
 import cn from 'clsx'
+import { AnimatePresence } from 'framer-motion'
 
-import { Header, SideBar } from '@/components/layout'
+import { Header, SideBar, SideBarDrawer } from '@/components/layout'
 
 import { PageIndicator, PageTitle } from '@/components/shared'
 
@@ -40,6 +41,8 @@ export const PageLayout: FC<PropsWithChildren<{ title: string }>> = ({
         })}
       >
         <SideBar />
+
+        <AnimatePresence>{sideBar.isOpen && <SideBarDrawer />}</AnimatePresence>
 
         <PageTitle title={title} />
 

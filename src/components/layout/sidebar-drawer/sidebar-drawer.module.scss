@@ -1,5 +1,7 @@
 .drawer {
-  @apply grid px-5;
+  @apply grid px-5 invisible hidden max-lg:visible max-lg:grid;
+
+  box-shadow: 0 20px 50px #00000028;
 
   grid-template-rows: 100px 40px 1fr;
 }

@@ -1,8 +1,5 @@
 'use client'
 
-import Image from 'next/image'
-import Link from 'next/link'
-
 import { FC } from 'react'
 import { FormProvider, useForm } from 'react-hook-form'
 
@@ -14,7 +11,7 @@ import { SearchField } from '@/components/ui'
 
 import { MenuIcon } from '@/components/icons'
 
-import { useAppSelector } from '@/shared/hooks'
+import { useActions, useAppSelector } from '@/shared/hooks'
 
 import { app } from '@/store/slices'
 
@@ -26,6 +23,8 @@ export const Header: FC = () => {
   })
 
   const { sideBar } = useAppSelector(app)
+
+  const { toggleSideBar } = useActions()
 
   return (
     <header
@@ -40,7 +39,12 @@ export const Header: FC = () => {
       >
         <Logo responsive />
 
-        <button className={styles.mobileMenu}>
+        <button
+          onClick={() => {
+            toggleSideBar()
+          }}
+          className={styles.mobileMenu}
+        >
           <MenuIcon />
         </button>
 
