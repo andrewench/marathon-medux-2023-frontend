@@ -1,15 +1,22 @@
-.page {
-  @apply h-[1000px];
-}
-
 .section {
   @apply w-1/2 min-h-screen;
 }
 
+.sectionContent {
+  @apply min-h-screen py-8;
+}
+
 .formSection {
-  @apply pl-32 py-8;
+}
+
+.heading {
+  @apply mb-5;
+}
+
+.form {
+  @apply w-[320px] flex flex-col gap-5;
 }
 
 .poster {
-  @apply fixed top-0 right-0 bg-[url('/poster.jpg')] bg-cover;
+  @apply fixed top-0 right-0 bg-[url('/poster.jpg')] bg-cover bg-center;
 }

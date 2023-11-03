@@ -1,3 +1,15 @@
+.label {
+  @apply block text-marathon-light text-xs font-medium mb-2 ml-5;
+}
+
 .field {
-  @apply bg-marathon-light-background text-marathon-light border-[2px] border-transparent border-solid focus:border-marathon-blue;
+  @apply w-full bg-marathon-light-background text-marathon-light border-[2px] border-transparent border-solid h-10 rounded-marathon-8 px-5 focus:border-marathon-blue focus:outline-none text-sm;
+
+  &::placeholder {
+    @apply text-sm text-[#90a1ac];
+  }
+}
+
+.errorLabel {
+  @apply text-sm text-marathon-red ml-5 mt-2;
 }
