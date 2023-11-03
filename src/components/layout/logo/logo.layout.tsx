@@ -7,6 +7,8 @@ import { FC } from 'react'
 
 import cn from 'clsx'
 
+import { StaticLogo } from '@/components/layout'
+
 import { useAppSelector } from '@/shared/hooks'
 
 import { app } from '@/store/slices'
@@ -24,13 +26,7 @@ export const Logo: FC<{ responsive?: boolean }> = ({ responsive }) => {
         [styles.hide]: responsive,
       })}
     >
-      <Image
-        src="/logo.svg"
-        width={164}
-        height={42}
-        alt="Medux Logo"
-        priority={true}
-        draggable={false}
+      <StaticLogo
         className={cn(styles.original, styles.logo, {
           [styles.hide]: !sideBar.isOpen && responsive,
         })}

@@ -1,0 +1,15 @@
+.page {
+  @apply h-[1000px];
+}
+
+.section {
+  @apply w-1/2 min-h-screen;
+}
+
+.formSection {
+  @apply pl-32 py-8;
+}
+
+.poster {
+  @apply fixed top-0 right-0 bg-[url('/poster.jpg')] bg-cover;
+}

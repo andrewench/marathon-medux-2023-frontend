@@ -1,11 +1,16 @@
 'use client'
 
-import Image from 'next/image'
 import Link from 'next/link'
 
 import { FC } from 'react'
 
-import { Drawer, Emergency, Flex, SideBarMenu } from '@/components/layout'
+import {
+  Drawer,
+  Emergency,
+  Flex,
+  SideBarMenu,
+  StaticLogo,
+} from '@/components/layout'
 
 import { SquareButton } from '@/components/ui'
 
@@ -22,14 +27,7 @@ export const SideBarDrawer: FC = () => {
     <Drawer position="left" className={styles.drawer}>
       <Flex align="center" content="space-between" className={styles.head}>
         <Link href="/dashboard" draggable={false}>
-          <Image
-            src="/logo.svg"
-            width={164}
-            height={42}
-            alt="Medux Logo"
-            priority={true}
-            draggable={false}
-          />
+          <StaticLogo />
         </Link>
 
         <SquareButton
