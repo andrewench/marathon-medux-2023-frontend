@@ -1,5 +1,6 @@
 'use client'
 
+import { Glasses, SlidersHorizontal, Type } from 'lucide-react'
 import { FC } from 'react'
 
 import cn from 'clsx'
@@ -7,8 +8,6 @@ import cn from 'clsx'
 import { DropMenu, Flex } from '@/components/layout'
 
 import { DropMenuItem, FontZoomer, SquareButton } from '@/components/ui'
-
-import { FilterIcon, FontIcon, GlassesIcon } from '@/components/icons'
 
 import styles from './page-title.module.scss'
 
@@ -19,7 +18,7 @@ export const PageTitle: FC<{ title: string }> = ({ title }) => {
 
       <div className={styles.actions}>
         <button className={styles.contrast}>
-          <GlassesIcon />
+          <Glasses size={20} strokeWidth={1} className="icon" />
           Increase contrast
         </button>
 
@@ -31,13 +30,19 @@ export const PageTitle: FC<{ title: string }> = ({ title }) => {
       <div className={cn('drop-menu', styles.filter)}>
         <div className="drop-button">
           <SquareButton>
-            <FilterIcon />
+            <SlidersHorizontal size={20} strokeWidth={1} className="icon" />
           </SquareButton>
         </div>
 
         <DropMenu position="right">
-          <DropMenuItem label="Increase contrast" icon={<GlassesIcon />} />
-          <DropMenuItem label="Font size" icon={<FontIcon />} />
+          <DropMenuItem
+            label="Increase contrast"
+            icon={<Glasses size={20} strokeWidth={1} className="icon" />}
+          />
+          <DropMenuItem
+            label="Font size"
+            icon={<Type size={20} strokeWidth={1} className="icon" />}
+          />
         </DropMenu>
       </div>
     </Flex>

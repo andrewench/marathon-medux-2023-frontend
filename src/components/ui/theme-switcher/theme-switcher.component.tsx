@@ -1,11 +1,11 @@
+'use client'
+
+import { Palette } from 'lucide-react'
 import { FC } from 'react'
 
 import cn from 'clsx'
 
-import { PaletteIcon } from '@/components/icons'
-
 import { useActions, useAppSelector } from '@/shared/hooks'
-import '@/shared/hooks'
 
 import { app } from '@/store/slices'
 
@@ -26,7 +26,7 @@ export const ThemeSwitcher: FC = () => {
 
   return (
     <button onClick={toggleTheme} className={cn('button', styles.button)}>
-      <PaletteIcon />
+      <Palette size={18} strokeWidth={1} className="icon" />
     </button>
   )
 }

@@ -1,3 +1,5 @@
+'use client'
+
 import { useId, useMemo } from 'react'
 import { FieldValues, useFormContext } from 'react-hook-form'
 
@@ -32,9 +34,11 @@ export const TextField = <T extends FieldValues>({
 
   return (
     <div>
-      <label htmlFor={labelId} className={styles.label}>
-        {label}
-      </label>
+      {label && (
+        <label htmlFor={labelId} className={styles.label}>
+          {label}
+        </label>
+      )}
 
       <input
         id={labelId}

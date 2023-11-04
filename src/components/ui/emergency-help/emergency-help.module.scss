@@ -4,7 +4,9 @@ $notify_size: 12px;
   @apply relative bg-[#414d55] h-10 w-10 rounded-marathon-8 flex-shrink-0;
 
   & > svg {
-    @apply ml-[12px];
+    @apply ml-[11px];
+
+    color: #fff;
   }
 
   &.notify {

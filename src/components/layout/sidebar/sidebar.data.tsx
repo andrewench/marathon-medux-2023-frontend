@@ -1,53 +1,59 @@
 import {
-  CalendarIcon,
-  DashboardIcon,
-  DoctorsIcon,
-  FinancesIcon,
-  MessageIcon,
-  PeopleIcon,
-  SettingsIcon,
-  StarIcon,
-} from '@/components/icons'
+  Calendar,
+  LayoutDashboard,
+  MessageSquare,
+  Settings,
+  Star,
+  Stethoscope,
+  Users,
+  Wallet2,
+} from 'lucide-react'
+
+const iconProps = {
+  size: 20,
+  strokeWidth: 1.25,
+  className: 'icon',
+}
 
 export const SideBarList = [
   {
     href: '/dashboard',
     label: 'Dashboard',
-    icon: <DashboardIcon />,
+    icon: <LayoutDashboard {...iconProps} />,
   },
   {
     href: '/appointments',
     label: 'Appointments',
-    icon: <CalendarIcon />,
+    icon: <Calendar {...iconProps} />,
   },
   {
     href: '/patients',
     label: 'Patients',
-    icon: <PeopleIcon />,
+    icon: <Users {...iconProps} />,
   },
   {
     href: '/doctors',
     label: 'Doctors',
-    icon: <DoctorsIcon />,
+    icon: <Stethoscope {...iconProps} />,
   },
   {
     href: '/messages',
     label: 'Messages',
-    icon: <MessageIcon />,
+    icon: <MessageSquare {...iconProps} />,
   },
   {
     href: '/reviews',
     label: 'Reviews',
-    icon: <StarIcon />,
+    icon: <Star {...iconProps} />,
   },
   {
     href: '/finances',
     label: 'Finances',
-    icon: <FinancesIcon />,
+    icon: <Wallet2 {...iconProps} />,
   },
   {
     href: '/settings',
     label: 'Settings',
-    icon: <SettingsIcon />,
+    icon: <Settings {...iconProps} />,
   },
 ]

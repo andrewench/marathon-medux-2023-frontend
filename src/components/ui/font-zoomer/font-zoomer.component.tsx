@@ -1,13 +1,11 @@
+import { Type } from 'lucide-react'
 import { FC, useEffect, useState } from 'react'
 
 import cn from 'clsx'
 
 import { Flex } from '@/components/layout'
 
-import { DotProgressBar } from '@/components/ui'
-import { type TPoint } from '@/components/ui/dot-progress-bar/dot-progress-bar.interface'
-
-import { FontIcon } from '@/components/icons'
+import { DotProgressBar, type TPoint } from '@/components/ui'
 
 import { AppConstant } from '@/shared/constants'
 
@@ -76,7 +74,7 @@ export const FontZoomer: FC = () => {
 
   return (
     <Flex align="center" className={styles.size}>
-      <FontIcon />
+      <Type size={20} strokeWidth={1} className="icon" />
 
       <label className={cn(styles.text, styles.label)}>Font size</label>
 

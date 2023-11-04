@@ -1,8 +1,7 @@
+import { Mic } from 'lucide-react'
 import { FC } from 'react'
 
 import cn from 'clsx'
-
-import { MicrophoneIcon } from '@/components/icons'
 
 import { type IEmergencyHelp } from './emergency-help.interface'
 
@@ -15,7 +14,7 @@ export const EmergencyHelp: FC<IEmergencyHelp> = ({ notify }) => {
         [styles.notify]: notify,
       })}
     >
-      <MicrophoneIcon />
+      <Mic size={20} strokeWidth={2} />
     </button>
   )
 }

@@ -1,5 +1,6 @@
 'use client'
 
+import { Bell, ChevronDown, LogOut, Palette } from 'lucide-react'
 import { FC } from 'react'
 
 import cn from 'clsx'
@@ -8,14 +9,7 @@ import { DropMenu, Flex } from '@/components/layout'
 
 import { Avatar } from '@/components/shared'
 
-import { DropMenuItem, ThemeSwitcher } from '@/components/ui'
-
-import {
-  BellIcon,
-  ChevronDownIcon,
-  LogoutIcon,
-  PaletteIcon,
-} from '@/components/icons'
+import { DropMenuItem, SquareButton, ThemeSwitcher } from '@/components/ui'
 
 import { useActions, useAppSelector } from '@/shared/hooks'
 
@@ -41,7 +35,7 @@ export const HeaderProfile: FC = () => {
       <ThemeSwitcher />
 
       <button className={cn('button', styles.button, styles.notify)}>
-        <BellIcon />
+        <Bell size={18} strokeWidth={1} className="icon" />
       </button>
 
       <Avatar />
@@ -53,24 +47,29 @@ export const HeaderProfile: FC = () => {
 
       <div className="drop-menu">
         <div className={styles.dropBox}>
-          <button className={cn('button', styles.button, styles.drop)}>
-            <ChevronDownIcon />
-          </button>
+          <SquareButton>
+            <ChevronDown size={24} strokeWidth={1} className="icon" />
+          </SquareButton>
         </div>
 
         <DropMenu position="right">
           <DropMenuItem
             label="Toggle Theme"
-            icon={<PaletteIcon />}
+            icon={<Palette size={18} strokeWidth={1} className="icon" />}
             onClick={toggleTheme}
             className={styles.themeItem}
           />
+
           <DropMenuItem
             label="Notifications"
-            icon={<BellIcon />}
+            icon={<Bell size={18} strokeWidth={1} className="icon" />}
             className={styles.notifyItem}
           />
-          <DropMenuItem label="Logout" icon={<LogoutIcon />} />
+
+          <DropMenuItem
+            label="Logout"
+            icon={<LogOut size={18} strokeWidth={1} className="icon" />}
+          />
         </DropMenu>
       </div>
     </Flex>

@@ -5,7 +5,6 @@
       "@/components/layout": ["components/layout"],
       "@/components/providers": ["components/providers"],
       "@/components/shared": ["components/shared"],
-      "@/components/icons": ["components/icons"],
       "@/components/ui": ["components/ui"],
       "@/shared/constants": ["shared/constants"],
       "@/shared/presets": ["shared/presets"],

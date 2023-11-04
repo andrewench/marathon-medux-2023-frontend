@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 
+import { X } from 'lucide-react'
 import { FC } from 'react'
 
 import {
@@ -13,8 +14,6 @@ import {
 } from '@/components/layout'
 
 import { SquareButton } from '@/components/ui'
-
-import { CloseIcon } from '@/components/icons'
 
 import { useActions } from '@/shared/hooks'
 
@@ -36,7 +35,7 @@ export const SideBarDrawer: FC = () => {
           }}
           className={styles.close}
         >
-          <CloseIcon />
+          <X size={30} strokeWidth={1} className="icon" />
         </SquareButton>
       </Flex>
 

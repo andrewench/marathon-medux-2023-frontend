@@ -1,5 +1,6 @@
 'use client'
 
+import { Menu } from 'lucide-react'
 import { FC } from 'react'
 import { FormProvider, useForm } from 'react-hook-form'
 
@@ -8,8 +9,6 @@ import cn from 'clsx'
 import { HeaderProfile, Logo } from '@/components/layout'
 
 import { SearchField } from '@/components/ui'
-
-import { MenuIcon } from '@/components/icons'
 
 import { useActions, useAppSelector } from '@/shared/hooks'
 
@@ -45,7 +44,7 @@ export const Header: FC = () => {
           }}
           className={styles.mobileMenu}
         >
-          <MenuIcon />
+          <Menu size={24} className="icon" />
         </button>
 
         <FormProvider {...methods}>
@@ -54,7 +53,9 @@ export const Header: FC = () => {
               type="text"
               field="search"
               placeholder="Search patients or doctors"
-              className={styles.search}
+              className={cn(styles.search, {
+                [styles.minimized]: !sideBar.isOpen,
+              })}
             />
           </form>
         </FormProvider>

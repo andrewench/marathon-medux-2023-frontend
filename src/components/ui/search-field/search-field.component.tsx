@@ -1,15 +1,18 @@
+'use client'
+
+import { Search } from 'lucide-react'
 import { FieldValues } from 'react-hook-form'
 
-import { ITextField, TextField } from '@/components/ui'
+import cn from 'clsx'
 
-import { SearchIcon } from '@/components/icons'
+import { ITextField, TextField } from '@/components/ui'
 
 import styles from './search-field.module.scss'
 
 export const SearchField = <T extends FieldValues>(props: ITextField<T>) => {
   return (
     <div className="flex relative">
-      <SearchIcon className={styles.icon} />
+      <Search size={16} className={cn(styles.icon, 'icon')} />
 
       <TextField<T> {...props} />
     </div>

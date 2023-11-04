@@ -1,12 +1,11 @@
 'use client'
 
+import { ChevronsLeft } from 'lucide-react'
 import { FC } from 'react'
 
 import cn from 'clsx'
 
 import { Emergency, SideBarMenu } from '@/components/layout'
-
-import { DoubleChevronLeftIcon } from '@/components/icons'
 
 import { useActions, useAppSelector } from '@/shared/hooks'
 
@@ -35,8 +34,10 @@ export const SideBar: FC = () => {
         }}
         className={styles.themeSwitcher}
       >
-        <DoubleChevronLeftIcon
-          className={cn({
+        <ChevronsLeft
+          size={18}
+          strokeWidth={1}
+          className={cn('icon', {
             [styles.minimized]: !sideBar.isOpen,
           })}
         />
