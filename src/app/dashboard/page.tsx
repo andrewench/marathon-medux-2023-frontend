@@ -1,17 +1,13 @@
 'use client'
 
-import { FC } from 'react'
-
-import { PageLayout } from '@/components/layout'
-
 import { MainProvider } from '@/components/providers'
 
-const Page: FC = () => {
+import { Dashboard } from '@/components/screens'
+
+export default function DashboardPage() {
   return (
     <MainProvider>
-      <PageLayout title="Basic Doctor Dashboard" />
+      <Dashboard />
     </MainProvider>
   )
 }
-
-export default Page

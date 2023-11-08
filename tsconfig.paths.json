@@ -3,6 +3,7 @@
     "baseUrl": "src",
     "paths": {
       "@/components/layout": ["components/layout"],
+      "@/components/screens": ["components/screens"],
       "@/components/providers": ["components/providers"],
       "@/components/shared": ["components/shared"],
       "@/components/ui": ["components/ui"],
@@ -14,6 +15,7 @@
       "@/shared/utils": ["shared/utils"],
       "@/shared/types": ["shared/types"],
       "@/store": ["store"],
+      "@/store/api": ["store/api"],
       "@/store/slices": ["store/slices"],
       "@/*": ["./*"]
     }
