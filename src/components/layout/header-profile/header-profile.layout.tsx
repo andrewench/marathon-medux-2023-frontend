@@ -1,7 +1,9 @@
 'use client'
 
+import { useRouter } from 'next/navigation'
+
 import { Bell, ChevronDown, LogOut, Palette } from 'lucide-react'
-import { FC } from 'react'
+import { FC, useEffect } from 'react'
 
 import cn from 'clsx'
 
@@ -13,14 +15,19 @@ import { DropMenuItem, SquareButton, ThemeSwitcher } from '@/components/ui'
 
 import { useActions, useAppSelector } from '@/shared/hooks'
 
+import { useLogoutMutation } from '@/store/api'
 import { app } from '@/store/slices'
 
 import styles from './header-profile.module.scss'
 
 export const HeaderProfile: FC = () => {
+  const router = useRouter()
+
   const { setThemeMode } = useActions()
 
   const { themeMode } = useAppSelector(app)
+
+  const [logoutUser, { data }] = useLogoutMutation()
 
   const toggleTheme = () => {
     if (themeMode === 'light') {
@@ -29,6 +36,12 @@ export const HeaderProfile: FC = () => {
       setThemeMode('light')
     }
   }
+
+  useEffect(() => {
+    if (!data) return
+
+    router.push('/login')
+  }, [data, router])
 
   return (
     <Flex align="center" className={styles.profile}>
@@ -69,6 +82,9 @@ export const HeaderProfile: FC = () => {
           <DropMenuItem
             label="Logout"
             icon={<LogOut size={18} strokeWidth={1} className="icon" />}
+            onClick={() => {
+              logoutUser(null)
+            }}
           />
         </DropMenu>
       </div>

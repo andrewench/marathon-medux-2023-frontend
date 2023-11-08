@@ -2,8 +2,9 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 
-import { FC } from 'react'
+import { FC, useEffect } from 'react'
 import { SubmitHandler } from 'react-hook-form'
 
 import cn from 'clsx'
@@ -27,11 +28,19 @@ import styles from './login.module.scss'
 export const Login: FC = () => {
   const methods = useConfiguredForm<TSignInCredentials>(SignInSchema)
 
-  const [loginUser] = useLoginMutation()
+  const router = useRouter()
+
+  const [loginUser, { data }] = useLoginMutation()
 
   const submitHandler: SubmitHandler<TSignInCredentials> = payload => {
     loginUser(payload)
   }
+
+  useEffect(() => {
+    if (!data) return
+
+    router.push('/dashboard')
+  }, [data, router])
 
   return (
     <Flex className="page">

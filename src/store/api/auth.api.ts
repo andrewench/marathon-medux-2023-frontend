@@ -17,7 +17,13 @@ export const authApi = createApi({
         data: payload,
       }),
     }),
+    logout: mutation<null, null>({
+      query: () => ({
+        url: '/auth/logout',
+        method: 'DELETE',
+      }),
+    }),
   }),
 })
 
-export const { useLoginMutation } = authApi
+export const { useLoginMutation, useLogoutMutation } = authApi
