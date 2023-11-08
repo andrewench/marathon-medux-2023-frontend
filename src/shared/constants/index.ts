@@ -1,6 +1,6 @@
 import type { TThemeMode, TZoomValue } from '@/shared/types'
 
-export const AppConstant = {
+export const Constants = {
   fontZoomer: {
     DEFAULT_VALUE: 1 as TZoomValue,
     VALUES: [0.9, 1, 1.1] as TZoomValue[],
@@ -17,5 +17,10 @@ export const AppConstant = {
       FONT_ZOOM_PREFIX: 'marathon-font-zoom',
       THEME_PREFIX: 'marathon-theme',
     },
+  },
+
+  tokens: {
+    ACCESS_TOKEN_PREFIX: 'at',
+    REFRESH_TOKEN_PREFIX: 'rt',
   },
 }

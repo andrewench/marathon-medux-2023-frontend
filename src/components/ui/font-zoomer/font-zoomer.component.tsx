@@ -7,7 +7,7 @@ import { Flex } from '@/components/layout'
 
 import { DotProgressBar, type TPoint } from '@/components/ui'
 
-import { AppConstant } from '@/shared/constants'
+import { Constants } from '@/shared/constants'
 
 import { type TZoomValue } from '@/shared/types'
 
@@ -19,7 +19,7 @@ export const FontZoomer: FC = () => {
   const [currentPercent, setCurrentPercent] = useState<number>(0)
 
   const [fontZoom, setFontZoom] = useState<TZoomValue>(() => {
-    const { storage, fontZoomer } = AppConstant
+    const { storage, fontZoomer } = Constants
 
     const DEFAULT_ZOOM = fontZoomer.DEFAULT_VALUE
 
@@ -61,7 +61,7 @@ export const FontZoomer: FC = () => {
   }, [fontZoom, points])
 
   useEffect(() => {
-    const { storage, fontZoomer } = AppConstant
+    const { storage, fontZoomer } = Constants
 
     const root = document.querySelector(':root') as HTMLElement
 
