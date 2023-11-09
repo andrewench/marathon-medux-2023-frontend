@@ -1,5 +1,9 @@
 .notify {
   @apply max-lg:hidden;
+
+  & > svg {
+    @apply ml-[11px];
+  }
 }
 
 .profile {
@@ -20,12 +24,20 @@
   @apply font-medium text-marathon-light;
 
   font-size: calc(1rem * var(--font-zoom));
+
+  &:empty {
+    @apply w-48;
+  }
 }
 
 .specialty {
   @apply uppercase text-marathon-light;
 
   font-size: calc(0.625rem * var(--font-zoom));
+
+  &:empty {
+    @apply mt-2 w-28;
+  }
 }
 
 .dropBox {

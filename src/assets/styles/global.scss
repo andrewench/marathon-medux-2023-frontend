@@ -38,6 +38,10 @@
   .icon {
     @apply text-marathon-light;
   }
+
+  .skeleton-line:empty {
+    @apply w-48 h-3 rounded-marathon-8 bg-marathon-gray animate-pulse;
+  }
 }
 
 @layer utilities {

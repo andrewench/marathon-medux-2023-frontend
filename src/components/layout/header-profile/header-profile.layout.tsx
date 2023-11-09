@@ -15,8 +15,10 @@ import { DropMenuItem, SquareButton, ThemeSwitcher } from '@/components/ui'
 
 import { useActions, useAppSelector } from '@/shared/hooks'
 
+import { convertToDefinedValues } from '@/shared/utils'
+
 import { useLogoutMutation } from '@/store/api'
-import { app } from '@/store/slices'
+import { app, user } from '@/store/slices'
 
 import styles from './header-profile.module.scss'
 
@@ -26,6 +28,8 @@ export const HeaderProfile: FC = () => {
   const { setThemeMode } = useActions()
 
   const { themeMode } = useAppSelector(app)
+
+  const { profile } = useAppSelector(user)
 
   const [logoutUser, { data }] = useLogoutMutation()
 
@@ -54,8 +58,13 @@ export const HeaderProfile: FC = () => {
       <Avatar />
 
       <div className={styles.meta}>
-        <p className={styles.username}>Nicholas Doyle</p>
-        <p className={styles.specialty}>Surgeon</p>
+        <p className={cn('skeleton-line', styles.username)}>
+          {convertToDefinedValues([profile.firstName, profile.lastName])}
+        </p>
+
+        <p className={cn('skeleton-line', styles.specialty)}>
+          {convertToDefinedValues([profile.role])}
+        </p>
       </div>
 
       <div className="drop-menu">
