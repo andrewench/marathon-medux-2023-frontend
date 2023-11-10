@@ -20,6 +20,8 @@ import { convertToDefinedValues } from '@/shared/utils'
 import { useLogoutMutation } from '@/store/api'
 import { user } from '@/store/slices'
 
+import { DropList } from '../drop-list/drop-list.layout'
+
 import styles from './header-profile.module.scss'
 
 export const HeaderProfile: FC = () => {
@@ -39,9 +41,9 @@ export const HeaderProfile: FC = () => {
     <Flex align="center" className={styles.profile}>
       <ThemeSwitcher />
 
-      <button className={cn('button', styles.button, styles.notify)}>
+      <SquareButton>
         <Bell size={18} strokeWidth={1} className="icon" />
-      </button>
+      </SquareButton>
 
       <Avatar />
 
@@ -55,36 +57,40 @@ export const HeaderProfile: FC = () => {
         </p>
       </div>
 
-      <div className="drop-menu">
-        <div className={styles.dropBox}>
-          <SquareButton>
-            <ChevronDown size={24} strokeWidth={1} className="icon" />
-          </SquareButton>
-        </div>
+      <DropList
+        position="right"
+        slots={{
+          button: (
+            <SquareButton>
+              <ChevronDown size={24} strokeWidth={1} className="icon" />
+            </SquareButton>
+          ),
+          list: (
+            <>
+              <DropMenuItem
+                label="Toggle Theme"
+                icon={<Palette size={18} strokeWidth={1} className="icon" />}
+                onClick={() => {}}
+                className={styles.themeItem}
+              />
 
-        <DropMenu position="right">
-          <DropMenuItem
-            label="Toggle Theme"
-            icon={<Palette size={18} strokeWidth={1} className="icon" />}
-            onClick={() => {}}
-            className={styles.themeItem}
-          />
+              <DropMenuItem
+                label="Notifications"
+                icon={<Bell size={18} strokeWidth={1} className="icon" />}
+                className={styles.notifyItem}
+              />
 
-          <DropMenuItem
-            label="Notifications"
-            icon={<Bell size={18} strokeWidth={1} className="icon" />}
-            className={styles.notifyItem}
-          />
-
-          <DropMenuItem
-            label="Logout"
-            icon={<LogOut size={18} strokeWidth={1} className="icon" />}
-            onClick={() => {
-              logoutUser(null)
-            }}
-          />
-        </DropMenu>
-      </div>
+              <DropMenuItem
+                label="Logout"
+                icon={<LogOut size={18} strokeWidth={1} className="icon" />}
+                onClick={() => {
+                  logoutUser(null)
+                }}
+              />
+            </>
+          ),
+        }}
+      />
     </Flex>
   )
 }

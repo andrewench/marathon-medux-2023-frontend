@@ -37,6 +37,8 @@
 
   .icon {
     @apply text-marathon-light;
+
+    transform: scale(calc(1 * var(--font-zoom)));
   }
 
   .skeleton-line:empty {

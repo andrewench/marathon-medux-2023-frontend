@@ -1,9 +1,5 @@
 .notify {
   @apply max-lg:hidden;
-
-  & > svg {
-    @apply ml-[11px];
-  }
 }
 
 .profile {
@@ -37,16 +33,6 @@
 
   &:empty {
     @apply mt-2 w-28;
-  }
-}
-
-.dropBox {
-  @apply py-3;
-
-  &:hover {
-    & ~ ul {
-      @apply visible;
-    }
   }
 }
 

@@ -1,0 +1,13 @@
+.menu {
+  @apply relative;
+}
+
+.button {
+  @apply py-3;
+
+  &:hover {
+    & ~ ul {
+      @apply visible;
+    }
+  }
+}
