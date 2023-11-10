@@ -13,33 +13,21 @@ import { Avatar } from '@/components/shared'
 
 import { DropMenuItem, SquareButton, ThemeSwitcher } from '@/components/ui'
 
-import { useActions, useAppSelector } from '@/shared/hooks'
+import { useAppSelector } from '@/shared/hooks'
 
 import { convertToDefinedValues } from '@/shared/utils'
 
 import { useLogoutMutation } from '@/store/api'
-import { app, user } from '@/store/slices'
+import { user } from '@/store/slices'
 
 import styles from './header-profile.module.scss'
 
 export const HeaderProfile: FC = () => {
   const router = useRouter()
 
-  const { setThemeMode } = useActions()
-
-  const { themeMode } = useAppSelector(app)
-
   const { profile } = useAppSelector(user)
 
   const [logoutUser, { data }] = useLogoutMutation()
-
-  const toggleTheme = () => {
-    if (themeMode === 'light') {
-      setThemeMode('dark')
-    } else {
-      setThemeMode('light')
-    }
-  }
 
   useEffect(() => {
     if (!data) return
@@ -78,7 +66,7 @@ export const HeaderProfile: FC = () => {
           <DropMenuItem
             label="Toggle Theme"
             icon={<Palette size={18} strokeWidth={1} className="icon" />}
-            onClick={toggleTheme}
+            onClick={() => {}}
             className={styles.themeItem}
           />
 

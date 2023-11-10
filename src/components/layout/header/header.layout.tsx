@@ -6,13 +6,14 @@ import { FormProvider, useForm } from 'react-hook-form'
 
 import cn from 'clsx'
 
-import { HeaderProfile, Logo } from '@/components/layout'
-
 import { SearchField } from '@/components/ui'
 
 import { useActions, useAppSelector } from '@/shared/hooks'
 
 import { app } from '@/store/slices'
+
+import { HeaderProfile } from '../header-profile/header-profile.layout'
+import { Logo } from '../logo/logo.layout'
 
 import styles from './header.module.scss'
 

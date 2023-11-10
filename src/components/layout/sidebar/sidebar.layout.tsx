@@ -5,16 +5,17 @@ import { FC } from 'react'
 
 import cn from 'clsx'
 
-import { Emergency, SideBarMenu } from '@/components/layout'
-
 import { useActions, useAppSelector } from '@/shared/hooks'
 
 import { app } from '@/store/slices'
 
+import { Emergency } from '../emergency/emergency.layout'
+import { SideBarMenu } from '../sidebar-menu/sidebar-menu.layout'
+
 import styles from './sidebar.module.scss'
 
 export const SideBar: FC = () => {
-  const { sideBar, themeMode } = useAppSelector(app)
+  const { sideBar } = useAppSelector(app)
 
   const { toggleSideBar } = useActions()
 

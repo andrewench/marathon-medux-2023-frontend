@@ -31,20 +31,29 @@ module.exports = {
     },
   },
   plugins: [
-    createThemes({
-      light: {
-        'marathon-background': '#f1f5f8',
-        'marathon-light-background': '#fafbfd',
-        'marathon-gray': '#e4eaf0',
-        'marathon-white': '#fff',
-        'marathon-light': '#414d55',
+    createThemes(
+      {
+        light: {
+          'marathon-background': '#f1f5f8',
+          'marathon-light-background': '#fafbfd',
+          'marathon-gray': '#e4eaf0',
+          'marathon-white': '#fff',
+          'marathon-light': '#414d55',
+        },
+        dark: {
+          'marathon-background': '#090a0a',
+          'marathon-light-background': '#171819',
+          'marathon-gray': '#131414',
+          'marathon-light': '#9ea7ac',
+        },
       },
-      dark: {
-        'marathon-background': '#090a0a',
-        'marathon-light-background': '#171819',
-        'marathon-gray': '#131414',
-        'marathon-light': '#9ea7ac',
+      {
+        defaultTheme: {
+          light: 'light',
+          dark: 'dark',
+        },
+        strict: true,
       },
-    }),
+    ),
   ],
 }

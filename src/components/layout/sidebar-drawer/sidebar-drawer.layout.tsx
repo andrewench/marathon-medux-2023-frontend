@@ -5,17 +5,14 @@ import Link from 'next/link'
 import { X } from 'lucide-react'
 import { FC } from 'react'
 
-import {
-  Drawer,
-  Emergency,
-  Flex,
-  SideBarMenu,
-  StaticLogo,
-} from '@/components/layout'
+import { Drawer, Flex, StaticLogo } from '@/components/layout'
 
 import { SquareButton } from '@/components/ui'
 
 import { useActions } from '@/shared/hooks'
+
+import { Emergency } from '../emergency/emergency.layout'
+import { SideBarMenu } from '../sidebar-menu/sidebar-menu.layout'
 
 import styles from './sidebar-drawer.module.scss'
 

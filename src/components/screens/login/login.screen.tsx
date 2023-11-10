@@ -57,6 +57,7 @@ export const Login: FC = () => {
               width={162}
               height={42}
               quality={100}
+              priority
               draggable={false}
               className={styles.logo}
             />

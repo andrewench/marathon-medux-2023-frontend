@@ -1,2 +1,2 @@
 export type TZoomValue = 0.9 | 1 | 1.1
-export type TThemeMode = 'light' | 'dark'
+export type TThemeMode = 'light' | 'dark' | 'system' | 'high_contrast'

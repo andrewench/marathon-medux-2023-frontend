@@ -5,13 +5,15 @@ import { FC, PropsWithChildren, useEffect, useState } from 'react'
 import cn from 'clsx'
 import { AnimatePresence } from 'framer-motion'
 
-import { Header, SideBar, SideBarDrawer } from '@/components/layout'
-
 import { PageIndicator, PageTitle } from '@/components/shared'
 
 import { useAppSelector } from '@/shared/hooks'
 
 import { app } from '@/store/slices'
+
+import { Header } from '../header/header.layout'
+import { SideBarDrawer } from '../sidebar-drawer/sidebar-drawer.layout'
+import { SideBar } from '../sidebar/sidebar.layout'
 
 import styles from './page.module.scss'
 
