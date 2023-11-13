@@ -8,14 +8,19 @@ export const Constants = {
   },
 
   theme: {
-    DEFAULT_VALUE: 'light' as TThemeMode,
-    VALUES: ['light', 'dark'] as TThemeMode[],
+    DEFAULT_VALUE: 'system' as TThemeMode,
+    VALUES: ['light', 'dark', 'system', 'high_contrast'] as TThemeMode[],
   },
 
   storage: {
+    NAME: 'marathon-medux-config',
     keys: {
       FONT_ZOOM_PREFIX: 'marathon-font-zoom',
       THEME_PREFIX: 'marathon-theme',
+    },
+    DEFAULT_CONFIG: {
+      theme: 'system' as TThemeMode,
+      fontZoom: 1 as TZoomValue,
     },
   },
 

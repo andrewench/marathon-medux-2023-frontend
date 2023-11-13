@@ -1,5 +1,4 @@
-import { StateAction } from '@/shared/types'
-import { type TZoomValue } from '@/shared/types'
+import { StateAction, TZoomValue } from '@/shared/types'
 
 import { type TPoint } from '../dot-progress-bar/dot-progress-bar.interface'
 

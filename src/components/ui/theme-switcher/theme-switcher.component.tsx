@@ -10,18 +10,27 @@ import { SquareButton } from '@/components/ui/square-button/square-button.compon
 
 import { Constants } from '@/shared/constants'
 
+import { useStorage } from '@/shared/hooks'
+
 import { TThemeMode } from '@/shared/types'
 
 import { ThemeModeList } from './theme-switcher.data'
 
 export const ThemeSwitcher: FC = () => {
-  const [theme, setTheme] = useState<TThemeMode | 'none'>('none')
+  const [selectedTheme, setSelectedTheme] = useState<TThemeMode | 'none'>(
+    'none',
+  )
+
+  const { storage, updateStorage } = useStorage(Constants.storage.NAME)
 
   useEffect(() => {
-    if (theme === 'none') return
+    if (selectedTheme === 'none') return
 
-    localStorage.setItem(Constants.storage.keys.THEME_PREFIX, theme)
-  }, [theme])
+    updateStorage(Constants.storage.NAME, {
+      ...storage,
+      theme: selectedTheme,
+    })
+  }, [selectedTheme, storage, updateStorage])
 
   return (
     <DropList
@@ -36,7 +45,7 @@ export const ThemeSwitcher: FC = () => {
           <>
             {ThemeModeList.map(({ type, ...props }, idx) => (
               <DropMenuItem
-                onClick={() => setTheme(type)}
+                onClick={() => setSelectedTheme(type)}
                 key={idx}
                 {...props}
               />

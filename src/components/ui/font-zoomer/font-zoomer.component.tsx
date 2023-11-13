@@ -9,6 +9,8 @@ import { DotProgressBar, type TPoint } from '@/components/ui'
 
 import { Constants } from '@/shared/constants'
 
+import { useStorage } from '@/shared/hooks'
+
 import { type TZoomValue } from '@/shared/types'
 
 import { initPointList } from './font-zoomer.helper'
@@ -18,27 +20,20 @@ import styles from './font-zoomer.module.scss'
 export const FontZoomer: FC = () => {
   const [currentPercent, setCurrentPercent] = useState<number>(0)
 
-  const [fontZoom, setFontZoom] = useState<TZoomValue>(() => {
-    const { storage, fontZoomer } = Constants
+  const { storage, updateStorage } = useStorage(Constants.storage.NAME)
 
-    const DEFAULT_ZOOM = fontZoomer.DEFAULT_VALUE
-
-    if (typeof window === 'undefined') return DEFAULT_ZOOM
-
-    const storageZoom = localStorage.getItem(storage.keys.FONT_ZOOM_PREFIX)
-
-    if (!storageZoom) return DEFAULT_ZOOM
-
-    const parsedZoom = parseFloat(storageZoom) as TZoomValue
-
-    const isValidValues = fontZoomer.VALUES.some(item => item === parsedZoom)
-
-    return isValidValues ? parsedZoom : DEFAULT_ZOOM
-  })
+  const [fontZoom, setFontZoom] = useState<TZoomValue>(storage.fontZoom)
 
   const [points, setPoints] = useState<TPoint[]>(
     initPointList(setFontZoom, setCurrentPercent),
   )
+
+  useEffect(() => {
+    updateStorage(Constants.storage.NAME, {
+      ...storage,
+      fontZoom,
+    })
+  }, [fontZoom, storage, updateStorage])
 
   useEffect(() => {
     const foundPoint = points.some(
@@ -61,15 +56,13 @@ export const FontZoomer: FC = () => {
   }, [fontZoom, points])
 
   useEffect(() => {
-    const { storage, fontZoomer } = Constants
+    const { fontZoomer } = Constants
 
     const root = document.querySelector(':root') as HTMLElement
 
     if (!root) return
 
     root.style.setProperty(fontZoomer.VARIABLE, String(fontZoom))
-
-    localStorage.setItem(storage.keys.FONT_ZOOM_PREFIX, String(fontZoom))
   }, [fontZoom])
 
   return (
