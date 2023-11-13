@@ -44,6 +44,10 @@
   .skeleton-line:empty {
     @apply w-48 h-3 rounded-marathon-8 bg-marathon-gray animate-pulse;
   }
+
+  .auth-form {
+    @apply w-[320px] flex flex-col gap-5;
+  }
 }
 
 @layer utilities {

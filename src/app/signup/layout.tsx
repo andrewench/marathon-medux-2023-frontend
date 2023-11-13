@@ -5,7 +5,7 @@ import { FC, PropsWithChildren } from 'react'
 import { DocumentLayout } from '@/components/layout'
 
 export const metadata: Metadata = {
-  title: 'Medux | Sign In',
+  title: 'Medux | Sign Up',
   icons: '/favicon.svg',
 }
 
