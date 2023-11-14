@@ -46,7 +46,7 @@
   }
 
   .auth-form {
-    @apply w-[320px] flex flex-col gap-5;
+    @apply xs:w-[320px] flex flex-col gap-5;
   }
 }
 

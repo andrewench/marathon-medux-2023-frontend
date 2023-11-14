@@ -1,5 +1,9 @@
+.page {
+  @apply max-lg:justify-center;
+}
+
 .section {
-  @apply w-1/2 min-h-screen;
+  @apply lg:w-1/2 min-h-screen justify-center;
 }
 
 .sectionContent {
@@ -19,5 +23,5 @@
 }
 
 .poster {
-  @apply fixed top-0 right-0 bg-[url('/poster.jpg')] bg-cover bg-center;
+  @apply max-lg:hidden fixed top-0 right-0 bg-[url('/poster.jpg')] bg-cover bg-center;
 }

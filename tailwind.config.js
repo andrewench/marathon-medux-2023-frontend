@@ -5,6 +5,9 @@ module.exports = {
   content: ['./src/**/*.{ts,tsx}'],
   theme: {
     extend: {
+      screens: {
+        xs: '375px',
+      },
       fontFamily: {
         serif: ['var(--font-roboto)'],
         roboto: ['var(--font-roboto)'],

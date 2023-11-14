@@ -20,7 +20,7 @@ export const AuthScreen: FC<PropsWithChildren<IAuthScreen>> = ({
   children,
 }) => {
   return (
-    <Flex className="page">
+    <Flex className={cn('page', styles.page)}>
       <Flex direction="column" align="center" className={styles.section}>
         <Flex
           direction="column"
