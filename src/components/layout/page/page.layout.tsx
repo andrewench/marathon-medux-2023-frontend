@@ -1,11 +1,12 @@
 'use client'
 
 import { FC, PropsWithChildren, useEffect, useState } from 'react'
+import TopBarProgress from 'react-topbar-progress-indicator'
 
 import cn from 'clsx'
 import { AnimatePresence } from 'framer-motion'
 
-import { PageIndicator, PageTitle } from '@/components/shared'
+import { PageTitle } from '@/components/shared'
 
 import { useAppSelector } from '@/shared/hooks'
 
@@ -16,6 +17,14 @@ import { SideBarDrawer } from '../sidebar-drawer/sidebar-drawer.layout'
 import { SideBar } from '../sidebar/sidebar.layout'
 
 import styles from './page.module.scss'
+
+TopBarProgress.config({
+  barColors: {
+    '0': '#2662F0',
+    '1.0': '#2662F0',
+  },
+  barThickness: 4,
+})
 
 export const PageLayout: FC<PropsWithChildren<{ title: string }>> = ({
   title,
@@ -29,7 +38,7 @@ export const PageLayout: FC<PropsWithChildren<{ title: string }>> = ({
     return false
   })
 
-  const { sideBar } = useAppSelector(app)
+  const { sideBar, isGlobalFetching } = useAppSelector(app)
 
   useEffect(() => {
     const resizeHandler = () => {
@@ -53,7 +62,7 @@ export const PageLayout: FC<PropsWithChildren<{ title: string }>> = ({
 
   return (
     <div className={cn(styles.page, 'page')}>
-      <PageIndicator />
+      {isGlobalFetching && <TopBarProgress />}
 
       <Header />
 
@@ -68,9 +77,11 @@ export const PageLayout: FC<PropsWithChildren<{ title: string }>> = ({
           {sideBar.isOpen && isRenderDrawer && <SideBarDrawer />}
         </AnimatePresence>
 
-        <PageTitle title={title} />
+        <div className={styles.viewContent}>
+          <PageTitle title={title} />
 
-        {children}
+          {children}
+        </div>
       </div>
     </div>
   )

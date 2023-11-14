@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { PayloadAction, createSlice } from '@reduxjs/toolkit'
 
 import type { TRootState } from '@/shared/types'
 
@@ -8,6 +8,7 @@ const initialState: IAppState = {
   sideBar: {
     isOpen: false,
   },
+  isGlobalFetching: false,
 }
 
 const appSlice = createSlice({
@@ -16,6 +17,9 @@ const appSlice = createSlice({
   reducers: {
     toggleSideBar: state => {
       state.sideBar.isOpen = !state.sideBar.isOpen
+    },
+    setFetching: (state, action: PayloadAction<boolean>) => {
+      state.isGlobalFetching = action.payload
     },
   },
 })

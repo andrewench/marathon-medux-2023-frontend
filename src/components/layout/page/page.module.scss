@@ -22,3 +22,7 @@
 
   grid-template-columns: min-content 1fr;
 }
+
+.viewContent {
+  @apply pl-5;
+}

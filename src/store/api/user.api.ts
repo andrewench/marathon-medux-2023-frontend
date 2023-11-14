@@ -9,7 +9,7 @@ export const userApi = createApi({
   baseQuery: axiosBaseQuery({
     baseUrl: process.env.NEXT_PUBLIC_API_PROXY_HOST as string,
   }),
-  endpoints: ({ query }) => ({
+  endpoints: ({ query, mutation }) => ({
     getProfile: query<User, null>({
       query: () => ({
         url: '/user/profile',
