@@ -8,12 +8,19 @@ import styles from './primary-button.module.scss'
 
 export const PrimaryButton: FC<IPrimaryButton> = ({
   onClick,
+  isLoading,
   children,
   className,
 }) => {
   return (
     <button onClick={onClick} className={cn(styles.button, className)}>
-      {children}
+      <div
+        className={cn(styles.textWrap, {
+          [styles.loader]: isLoading,
+        })}
+      >
+        <p>{children}</p>
+      </div>
     </button>
   )
 }

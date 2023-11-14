@@ -2,11 +2,13 @@
 
 import { useRouter } from 'next/navigation'
 
-import { FC, useEffect } from 'react'
+import { FC, useEffect, useState } from 'react'
 import { SubmitHandler } from 'react-hook-form'
 
 import { Form } from '@/components/layout'
 import { AuthScreen } from '@/components/layout/auth-screen/auth-screen.layout'
+
+import { ErrorHelper } from '@/components/shared'
 
 import { FormHelper, PrimaryButton, TextField } from '@/components/ui'
 
@@ -14,16 +16,18 @@ import { SignInSchema } from '@/shared/schemes'
 
 import { useConfiguredForm } from '@/shared/hooks'
 
-import { type TSignInCredentials } from '@/shared/types'
+import { ErrorResponse, type TSignInCredentials } from '@/shared/types'
 
 import { useLoginMutation } from '@/store/api'
 
 export const Login: FC = () => {
+  const [errorMessage, setErrorMessage] = useState<string>('')
+
   const methods = useConfiguredForm<TSignInCredentials>(SignInSchema)
 
   const router = useRouter()
 
-  const [loginUser, { data }] = useLoginMutation()
+  const [loginUser, { data, error }] = useLoginMutation()
 
   const submitHandler: SubmitHandler<TSignInCredentials> = payload => {
     loginUser(payload)
@@ -34,6 +38,18 @@ export const Login: FC = () => {
 
     router.push('/dashboard')
   }, [data, router])
+
+  useEffect(() => {
+    if (!error) return
+
+    const { data } = error as ErrorResponse
+
+    if (data.message) {
+      setErrorMessage(data.message)
+    } else {
+      setErrorMessage('')
+    }
+  }, [error])
 
   return (
     <AuthScreen
@@ -48,6 +64,8 @@ export const Login: FC = () => {
         ),
       }}
     >
+      {errorMessage && <ErrorHelper>{errorMessage}</ErrorHelper>}
+
       <Form<TSignInCredentials>
         methods={methods}
         onSubmit={submitHandler}
@@ -67,7 +85,9 @@ export const Login: FC = () => {
           type="password"
         />
 
-        <PrimaryButton type="submit">Sign In</PrimaryButton>
+        <PrimaryButton type="submit" className="mt-3">
+          Sign In
+        </PrimaryButton>
       </Form>
     </AuthScreen>
   )

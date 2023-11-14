@@ -22,14 +22,19 @@ export const TextField = <T extends FieldValues>({
   const {
     register,
     formState: { errors },
+    clearErrors,
   } = useFormContext<T>()
 
   const overrideRegister = useMemo(
     () => ({
       ...register(field),
-      onChange: () => {},
+      onChange: () => {
+        if (errors[field]?.message) {
+          clearErrors(field)
+        }
+      },
     }),
-    [field, register],
+    [clearErrors, errors, field, register],
   )
 
   return (
@@ -45,7 +50,13 @@ export const TextField = <T extends FieldValues>({
         type={type}
         placeholder={placeholder}
         autoComplete={autoComplete}
-        className={cn(styles.field, className)}
+        className={cn(
+          styles.field,
+          {
+            [styles.error]: errors[field]?.message,
+          },
+          className,
+        )}
         {...overrideRegister}
       />
 

@@ -2,7 +2,11 @@ import { createApi } from '@reduxjs/toolkit/query/react'
 
 import { axiosBaseQuery } from '@/shared/utils'
 
-import type { TSignInCredentials, User } from '@/shared/types'
+import type {
+  TSignInCredentials,
+  TSignUpCredentials,
+  User,
+} from '@/shared/types'
 
 export const authApi = createApi({
   reducerPath: 'authApi',
@@ -17,6 +21,13 @@ export const authApi = createApi({
         data: payload,
       }),
     }),
+    signUp: mutation<User, Omit<TSignUpCredentials, 'confirm'>>({
+      query: payload => ({
+        url: '/auth/signup',
+        method: 'PUT',
+        data: payload,
+      }),
+    }),
     logout: mutation<null, null>({
       query: () => ({
         url: '/auth/logout',
@@ -26,4 +37,5 @@ export const authApi = createApi({
   }),
 })
 
-export const { useLoginMutation, useLogoutMutation } = authApi
+export const { useLoginMutation, useLogoutMutation, useSignUpMutation } =
+  authApi

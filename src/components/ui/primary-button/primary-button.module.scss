@@ -1,3 +1,24 @@
 .button {
-  @apply bg-marathon-blue text-marathon-white rounded-marathon-8 h-10 text-sm font-rubik;
+  @apply bg-marathon-blue text-[#fff] rounded-marathon-8 h-10 text-sm font-rubik pt-[2px];
+}
+
+.textWrap {
+  @apply inline-block relative;
+
+  &.loader {
+    @apply after:animate-spin;
+
+    &::after {
+      content: '';
+      position: absolute;
+      right: -28px;
+      top: 0;
+      display: block;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      border: 2px solid #ffffff50;
+      border-left: 2px solid transparent;
+    }
+  }
 }

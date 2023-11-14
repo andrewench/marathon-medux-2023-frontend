@@ -8,8 +8,12 @@
   &::placeholder {
     @apply text-sm text-[#90a1ac];
   }
+
+  &.error {
+    @apply border-marathon-red/90;
+  }
 }
 
 .errorLabel {
-  @apply text-sm text-marathon-red ml-5 mt-2;
+  @apply text-sm text-marathon-red/90 ml-5 mt-2;
 }
