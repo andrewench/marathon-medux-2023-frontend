@@ -1,6 +1,6 @@
 'use client'
 
-import { FC, PropsWithChildren, useEffect, useState } from 'react'
+import { FC, useEffect, useState } from 'react'
 import TopBarProgress from 'react-topbar-progress-indicator'
 
 import cn from 'clsx'
@@ -9,6 +9,8 @@ import { AnimatePresence } from 'framer-motion'
 import { PageTitle } from '@/components/shared'
 
 import { useAppSelector } from '@/shared/hooks'
+
+import { PropsWithClassNameAndChildren } from '@/shared/types'
 
 import { app } from '@/store/slices'
 
@@ -26,10 +28,9 @@ TopBarProgress.config({
   barThickness: 4,
 })
 
-export const PageLayout: FC<PropsWithChildren<{ title: string }>> = ({
-  title,
-  children,
-}) => {
+export const PageLayout: FC<
+  PropsWithClassNameAndChildren<{ title: string }>
+> = ({ title, className, children }) => {
   const [isRenderDrawer, setRenderDrawer] = useState<boolean>(() => {
     if (typeof window === 'undefined') return false
 
@@ -80,7 +81,7 @@ export const PageLayout: FC<PropsWithChildren<{ title: string }>> = ({
         <div className={styles.viewContent}>
           <PageTitle title={title} />
 
-          {children}
+          <div className={cn(className)}>{children}</div>
         </div>
       </div>
     </div>

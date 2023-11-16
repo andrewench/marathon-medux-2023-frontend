@@ -1,0 +1,6 @@
+.layout {
+  @apply grid gap-5 pt-7 pb-10;
+
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 182px);
+}

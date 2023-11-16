@@ -1,7 +1,7 @@
 @import '../../../assets/styles/_variables';
 
 .box {
-  @apply relative border-r-[1px] max-lg:hidden pr-5;
+  @apply sticky top-[110px] h-[calc(100vh-100px-10px)] border-r-[1px] max-lg:hidden pr-5;
 
   &:not(.minimized) {
     @apply px-10;

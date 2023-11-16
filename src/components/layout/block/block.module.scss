@@ -1,0 +1,11 @@
+.box {
+  @apply rounded-[10px] bg-marathon-light-background p-5;
+
+  box-shadow: 12px 12px 24px #00000005;
+}
+
+.title {
+  @apply text-marathon-light font-rubik font-medium;
+
+  font-size: calc(1.125rem * var(--font-zoom));
+}

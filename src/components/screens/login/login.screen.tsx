@@ -27,7 +27,7 @@ export const Login: FC = () => {
 
   const router = useRouter()
 
-  const [loginUser, { data, error }] = useLoginMutation()
+  const [loginUser, { data, error, isLoading }] = useLoginMutation()
 
   const submitHandler: SubmitHandler<TSignInCredentials> = payload => {
     loginUser(payload)
@@ -85,7 +85,7 @@ export const Login: FC = () => {
           type="password"
         />
 
-        <PrimaryButton type="submit" className="mt-3">
+        <PrimaryButton type="submit" isLoading={isLoading} className="mt-3">
           Sign In
         </PrimaryButton>
       </Form>
