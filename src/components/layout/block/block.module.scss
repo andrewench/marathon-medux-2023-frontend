@@ -1,5 +1,5 @@
 .box {
-  @apply rounded-[10px] bg-marathon-light-background p-5;
+  @apply relative rounded-[10px] bg-marathon-light-background p-5 transition-shadow duration-150;
 
   box-shadow: 12px 12px 24px #00000005;
 }
@@ -8,4 +8,14 @@
   @apply text-marathon-light font-rubik font-medium;
 
   font-size: calc(1.125rem * var(--font-zoom));
+}
+
+html[data-theme='light'] {
+  .box {
+    @apply bg-marathon-white;
+
+    &:hover {
+      box-shadow: 30px 30px 70px #2662f014;
+    }
+  }
 }

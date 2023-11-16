@@ -1,0 +1,7 @@
+.box {
+  @apply gap-1;
+}
+
+.button {
+  @apply hover:bg-marathon-gray rounded-marathon-8 text-marathon-light p-[6px] hover:text-marathon-azure transition-colors duration-150;
+}

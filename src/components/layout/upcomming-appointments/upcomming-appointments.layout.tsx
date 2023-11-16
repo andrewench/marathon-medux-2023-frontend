@@ -11,7 +11,7 @@ export const UpcommingAppointments: FC = () => {
       slot={<div></div>}
       className={styles.box}
     >
-      Content
+      <p className="text-neutral-500">Content</p>
     </Block>
   )
 }

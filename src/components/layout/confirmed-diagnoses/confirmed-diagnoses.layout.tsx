@@ -1,4 +1,8 @@
+'use client'
+
 import { FC } from 'react'
+
+import { ButtonSlider } from '@/components/ui'
 
 import { Block } from '../block/block.layout'
 
@@ -8,10 +12,10 @@ export const ConfirmedDiagnoses: FC = () => {
   return (
     <Block
       title="Confirmed diagnoses"
-      slot={<div></div>}
+      slot={<ButtonSlider />}
       className={styles.box}
     >
-      Content
+      <p className="text-neutral-500">Content</p>
     </Block>
   )
 }

@@ -1,5 +1,5 @@
 .box {
-  @apply sticky top-[100px] py-[10px] max-lg:col-span-full lg:col-start-2 lg:col-end-[-1] bg-marathon-background;
+  @apply sticky top-[100px] py-[10px] max-lg:col-span-full lg:col-start-2 lg:col-end-[-1] bg-marathon-background z-[8000];
 }
 
 .heading {
