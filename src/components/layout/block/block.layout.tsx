@@ -21,7 +21,7 @@ export const Block: FC<PropsWithClassNameAndChildren<IBlock>> = ({
       <Flex align="center" content="space-between">
         <h1 className={styles.title}>{title}</h1>
 
-        {slot}
+        {slot && slot}
       </Flex>
 
       {children}

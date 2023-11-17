@@ -1,13 +1,41 @@
 .box {
-  @apply relative h-[12px] hover:cursor-pointer;
+  @apply relative;
+}
+
+.bar {
+  @apply absolute left-0 rounded-[3px];
 }
 
 .track {
-  @apply absolute left-0 top-1 w-full h-1 rounded-[2px] bg-marathon-gray;
+  @apply bg-marathon-gray;
 }
 
 .progress {
-  @apply absolute left-0 top-1 h-1 rounded-[2px] bg-marathon-light;
+  @apply bg-marathon-blue;
+}
+
+.box.horizontal {
+  @apply h-[6px];
+
+  .track {
+    @apply w-full h-[6px] top-1;
+  }
+
+  .progress {
+    @apply h-1;
+  }
+}
+
+.box.vertical {
+  @apply w-[6px];
+
+  .track {
+    @apply w-[6px] h-[75px];
+  }
+
+  .progress {
+    @apply w-[6px] bottom-0;
+  }
 }
 
 .drag {

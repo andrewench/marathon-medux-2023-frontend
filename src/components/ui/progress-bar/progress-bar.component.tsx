@@ -1,44 +1,49 @@
-import { FC, useEffect, useRef, useState } from 'react'
+import { FC, useLayoutEffect, useRef } from 'react'
 
-import { useSlider } from '@/shared/hooks'
+import cn from 'clsx'
+
+import { calculateProgress } from '@/shared/utils'
 
 import { type IProgressBar } from './progress-bar.interface'
 
 import styles from './progress-bar.module.scss'
 
-export const ProgressBar: FC<IProgressBar> = ({ percent, maxWidth }) => {
-  const [isDrawProgress, setDrawProgress] = useState<boolean>(false)
-
+export const ProgressBar: FC<IProgressBar> = ({
+  variant,
+  percent,
+  maxWidth,
+}) => {
   const wrapRef = useRef<HTMLDivElement>(null)
   const progressRef = useRef<HTMLDivElement>(null)
 
-  const { handlers, draggerPosition } = useSlider({
-    maxWidth,
-    percent,
-    wrap: wrapRef,
-    isInteract: true,
-  })
-
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (!wrapRef.current || !progressRef.current) return
 
-    wrapRef.current.style.width = `${maxWidth}px`
-    progressRef.current.style.width = `${draggerPosition}px`
+    const progress = calculateProgress(maxWidth, percent)
 
-    if (!isDrawProgress) setDrawProgress(true)
-  }, [draggerPosition, isDrawProgress, maxWidth])
+    switch (variant) {
+      case 'horizontal':
+        wrapRef.current.style.width = `${maxWidth}px`
+        progressRef.current.style.width = `${progress}px`
+        break
+
+      case 'vertical':
+        wrapRef.current.style.height = `${maxWidth}px`
+        progressRef.current.style.height = `${progress}px`
+        break
+    }
+  }, [maxWidth, percent, variant])
 
   return (
-    <div ref={wrapRef} className={styles.box} {...handlers}>
-      <div className={styles.track} />
-      <div ref={progressRef} className={styles.progress} />
-
-      {isDrawProgress && (
-        <div
-          style={{ left: `${draggerPosition - 8}px` }}
-          className={styles.drag}
-        />
-      )}
+    <div
+      ref={wrapRef}
+      className={cn(styles.box, {
+        [styles.horizontal]: variant === 'horizontal',
+        [styles.vertical]: variant === 'vertical',
+      })}
+    >
+      <div className={cn(styles.bar, styles.track)} />
+      <div ref={progressRef} className={cn(styles.bar, styles.progress)} />
     </div>
   )
 }

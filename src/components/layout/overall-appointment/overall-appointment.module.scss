@@ -1,0 +1,5 @@
+.label {
+  @apply mt-3 font-rubik text-marathon-light;
+
+  font-size: calc(0.625rem * var(--font-zoom));
+}
