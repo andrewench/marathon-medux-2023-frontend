@@ -17,6 +17,8 @@ export const DropList: FC<PropsWithClassName<IDropList>> = ({
 }) => {
   return (
     <div className={cn(styles.menu, className)}>
+      <div className={styles.wrap} />
+
       <div className={styles.button}>{slots.button}</div>
 
       <DropMenu position={position}>{slots.list}</DropMenu>

@@ -1,0 +1,11 @@
+.button {
+  @apply bg-marathon-background text-marathon-blue rounded-marathon-8 px-4;
+
+  font-size: calc(0.75rem * var(--font-zoom));
+}
+
+html[data-theme='dark'] {
+  .button {
+    @apply bg-marathon-gray;
+  }
+}

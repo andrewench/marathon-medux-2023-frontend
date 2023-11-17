@@ -1,0 +1,15 @@
+.userName {
+  @apply text-marathon-blue;
+
+  font-size: calc(0.875rem * var(--font-zoom));
+}
+
+.testName {
+  @apply text-marathon-light font-medium leading-5 max-w-[80%];
+
+  font-size: calc(1rem * var(--font-zoom));
+}
+
+.icon {
+  @apply text-marathon-light;
+}

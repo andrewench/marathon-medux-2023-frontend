@@ -78,10 +78,10 @@ export const PageLayout: FC<
           {sideBar.isOpen && isRenderDrawer && <SideBarDrawer />}
         </AnimatePresence>
 
-        <div className={styles.viewContent}>
+        <div>
           <PageTitle title={title} />
 
-          <div className={cn(className)}>{children}</div>
+          <div className={cn(styles.viewContent, className)}>{children}</div>
         </div>
       </div>
     </div>

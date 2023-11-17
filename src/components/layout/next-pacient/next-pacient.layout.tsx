@@ -24,12 +24,14 @@ import { Flex } from '../flex/flex.layout'
 export const NextPacient: FC = () => {
   return (
     <Block title="Next patient" slot={<ButtonSlider />}>
+      <div className={styles.notify} />
+
       <Flex align="center" className={styles.metaBox}>
-        <Avatar />
+        <Avatar src="/user_2.png" alt="Avatar" />
 
         <div className={styles.meta}>
-          <p className={styles.username}>Polly Paul</p>
-          <p className={styles.appointment}>USG + Consultation</p>
+          <p className={styles.userName}>Polly Paul</p>
+          <p className={styles.appointmentName}>USG + Consultation</p>
         </div>
 
         <button className={cn('flex-center-center', styles.acceptCall)}>
@@ -50,7 +52,7 @@ export const NextPacient: FC = () => {
             button: (
               <SquareButton className={styles.menu}>
                 <MoreHorizontal
-                  size={16}
+                  size={18}
                   strokeWidth={1.25}
                   className={styles.menuIcon}
                 />

@@ -1,7 +1,7 @@
 .box {
-  @apply invisible absolute top-16 md:p-5 max-md:p-3 bg-marathon-light-background z-[1000] rounded-marathon-8 hover:visible min-w-[240px];
+  @apply invisible absolute top-16 md:p-5 max-md:p-3 bg-marathon-white z-[1000] rounded-marathon-8 hover:visible min-w-[240px];
 
-  box-shadow: 25px 25px 50px #00000009;
+  box-shadow: 25px 25px 50px #00000013;
 
   &.left {
     @apply left-0;
@@ -9,5 +9,11 @@
 
   &.right {
     @apply right-0;
+  }
+}
+
+html[data-theme='dark'] {
+  .box {
+    @apply bg-marathon-light-background;
   }
 }

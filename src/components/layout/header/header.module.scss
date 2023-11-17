@@ -1,7 +1,7 @@
 @import '../../../assets/styles/_variables';
 
 .header {
-  @apply sticky top-0 content-center z-[9000] bg-marathon-background;
+  @apply sticky top-0 content-center z-[9000] bg-marathon-background/90 backdrop-blur-sm;
 
   display: inherit;
   grid-column: 1 / -1;

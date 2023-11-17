@@ -1,5 +1,13 @@
-.block {
-  @apply flex flex-col gap-3;
+.notify {
+  @apply absolute -left-[7px] -top-[7px] w-5 h-5 rounded-[50%] bg-marathon-malachite border-[3px] border-marathon-white;
+
+  box-shadow: 0 0 0 5px #f1f5f8;
+}
+
+html[data-theme='dark'] {
+  .notify {
+    box-shadow: 0 0 0 5px #090a0a;
+  }
 }
 
 .metaBox {
@@ -10,16 +18,20 @@
   @apply ml-5;
 }
 
-.username {
-  @apply text-marathon-blue text-sm;
+.userName {
+  @apply text-marathon-blue;
+
+  font-size: calc(0.875rem * var(--font-zoom));
 }
 
-.appointment {
+.appointmentName {
   @apply text-marathon-light font-medium;
+
+  font-size: calc(1rem * var(--font-zoom));
 }
 
 .divider {
-  @apply mt-2 border-dashed border-[1px] border-[#a2c0d4] border-b-0;
+  @apply mt-4 mb-2 border-dashed border-[1px] border-[#a2c0d4] border-b-0;
 }
 
 .acceptCall {
@@ -36,6 +48,8 @@
 
 .callCreatedAt {
   @apply font-medium ml-2 text-marathon-light;
+
+  font-size: calc(1rem * var(--font-zoom));
 }
 
 .menu {

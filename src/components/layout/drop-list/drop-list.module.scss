@@ -1,9 +1,26 @@
 .menu {
   @apply relative;
+
+  &:hover > .button {
+    @apply bg-marathon-gray rounded-[4px] transition-colors duration-150;
+  }
 }
 
 .button {
-  @apply py-3;
+  @apply relative block;
+
+  &:hover ~ ul {
+    @apply visible;
+  }
+}
+
+.wrap {
+  position: absolute;
+  left: 0;
+  top: 40px;
+  z-index: 100;
+  width: 40px;
+  height: 24px;
 
   &:hover {
     & ~ ul {

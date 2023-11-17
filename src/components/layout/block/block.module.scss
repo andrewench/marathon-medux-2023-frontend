@@ -12,8 +12,6 @@
 
 html[data-theme='light'] {
   .box {
-    @apply bg-marathon-white;
-
     &:hover {
       box-shadow: 30px 30px 70px #2662f014;
     }
