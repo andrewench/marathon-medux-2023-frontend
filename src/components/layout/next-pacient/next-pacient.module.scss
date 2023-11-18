@@ -30,10 +30,6 @@ html[data-theme='dark'] {
   font-size: calc(1rem * var(--font-zoom));
 }
 
-.divider {
-  @apply mt-4 mb-2 border-dashed border-[1px] border-[#a2c0d4] border-b-0;
-}
-
 .acceptCall {
   @apply ml-auto bg-marathon-background w-10 h-10 rounded-[20px] -scale-100;
 }

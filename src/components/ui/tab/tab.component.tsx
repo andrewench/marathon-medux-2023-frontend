@@ -4,14 +4,13 @@ import cn from 'clsx'
 
 import { ITab } from './tab.interface'
 
-import styles from './tab.module.scss'
-
 export const Tab: FC<ITab> = ({
   index,
   currentTab,
   setTab,
   onClick,
   children,
+  classNames,
 }) => {
   const clickHandler = () => {
     setTab(index)
@@ -22,8 +21,8 @@ export const Tab: FC<ITab> = ({
   return (
     <button
       onClick={clickHandler}
-      className={cn(styles.button, {
-        [styles.active]: index === currentTab,
+      className={cn(classNames.button, {
+        [classNames.active]: index === currentTab,
       })}
     >
       {children}

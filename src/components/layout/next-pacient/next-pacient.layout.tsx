@@ -13,7 +13,7 @@ import { FC } from 'react'
 
 import cn from 'clsx'
 
-import { Avatar } from '@/components/shared'
+import { Avatar, Divider } from '@/components/shared'
 
 import { ButtonSlider, DropMenuItem, SquareButton } from '@/components/ui'
 
@@ -39,7 +39,7 @@ export const NextPacient: FC = () => {
         </button>
       </Flex>
 
-      <div className={styles.divider} />
+      <Divider className="mt-4 mb-2" />
 
       <Flex align="center">
         <Clock4 size={18} strokeWidth={1.5} className={styles.clockIcon} />

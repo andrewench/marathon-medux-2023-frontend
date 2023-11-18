@@ -1,3 +1,35 @@
 .box {
   grid-row: 3 / 5;
 }
+
+.tabs {
+  @apply mt-4 px-5 gap-3 bg-marathon-background rounded-marathon-8;
+}
+
+.button {
+  @apply rounded-marathon-8 text-marathon-blue px-5 py-[1px];
+
+  font-size: calc(0.75rem * var(--font-zoom));
+}
+
+.active {
+  @apply bg-[#fff];
+}
+
+.questions {
+  @apply mt-5 gap-6;
+}
+
+.scrollBar {
+  @apply w-full max-h-[260px];
+}
+
+html[data-theme='dark'] {
+  .tabs {
+    @apply bg-marathon-gray;
+  }
+
+  .active {
+    @apply bg-marathon-light text-[#fff];
+  }
+}

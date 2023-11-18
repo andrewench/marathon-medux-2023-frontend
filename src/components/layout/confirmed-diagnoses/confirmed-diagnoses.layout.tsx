@@ -6,8 +6,6 @@ import { ConfirmedDiagnosisLabel } from '@/components/shared'
 
 import { ButtonSlider, ProgressBar, Tab } from '@/components/ui'
 
-import { Constants } from '@/shared/constants'
-
 import { Block } from '../block/block.layout'
 import { Flex } from '../flex/flex.layout'
 import { Tabs } from '../tabs/tabs.layout'
@@ -26,13 +24,37 @@ export const ConfirmedDiagnoses: FC = () => {
       className={styles.box}
     >
       <Tabs className="mt-3 gap-[2px]">
-        <Tab index={0} currentTab={tab} setTab={setTab}>
+        <Tab
+          index={0}
+          currentTab={tab}
+          setTab={setTab}
+          classNames={{
+            button: styles.button,
+            active: styles.active,
+          }}
+        >
           Year
         </Tab>
-        <Tab index={1} currentTab={tab} setTab={setTab}>
+        <Tab
+          index={1}
+          currentTab={tab}
+          setTab={setTab}
+          classNames={{
+            button: styles.button,
+            active: styles.active,
+          }}
+        >
           Month
         </Tab>
-        <Tab index={2} currentTab={tab} setTab={setTab}>
+        <Tab
+          index={2}
+          currentTab={tab}
+          setTab={setTab}
+          classNames={{
+            button: styles.button,
+            active: styles.active,
+          }}
+        >
           Week
         </Tab>
       </Tabs>

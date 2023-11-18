@@ -13,7 +13,7 @@ export const Tabs: FC<PropsWithClassNameAndChildren> = ({
   children,
 }) => {
   return (
-    <Flex content="space-between" className={cn(styles.box, className)}>
+    <Flex align="center" className={cn(styles.box, className)}>
       {children}
     </Flex>
   )

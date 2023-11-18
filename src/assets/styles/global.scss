@@ -85,3 +85,16 @@ body::-webkit-scrollbar-thumb {
 .scroll-bar::-webkit-scrollbar-thumb {
   @apply rounded-[3px] bg-marathon-gray;
 }
+
+.simplebar-scrollbar {
+  @apply scroll-smooth will-change-transform before:bg-marathon-light/50 before:w-[6px];
+
+  &::before {
+    left: unset !important;
+    right: 0 !important;
+  }
+}
+
+.simplebar-content-wrapper {
+  @apply pr-2;
+}

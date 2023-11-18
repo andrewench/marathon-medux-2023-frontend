@@ -1,0 +1,21 @@
+.date {
+  @apply text-marathon-light gap-3 mb-1;
+
+  font-size: calc(0.6875rem * var(--font-zoom));
+}
+
+.title {
+  @apply text-marathon-light font-medium leading-[22px] max-w-[80%];
+
+  font-size: calc(1rem * var(--font-zoom));
+}
+
+.comments {
+  @apply w-10 h-10 flex-shrink-0 bg-marathon-background rounded-[20px] text-[#636d73] pl-[10px];
+}
+
+html[data-theme='dark'] {
+  .comments {
+    @apply bg-marathon-gray;
+  }
+}

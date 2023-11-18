@@ -6,5 +6,9 @@ export interface ITab extends PropsWithChildren {
   index: number
   currentTab: number
   setTab: StateAction<number>
+  classNames: {
+    button: string
+    active: string
+  }
   onClick?: () => void
 }

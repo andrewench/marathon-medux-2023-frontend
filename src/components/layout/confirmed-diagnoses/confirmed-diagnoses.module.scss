@@ -1,3 +1,37 @@
 .box {
   grid-row: 3 / 5;
 }
+
+.button {
+  height: inherit;
+
+  @apply text-marathon-blue bg-marathon-background flex-grow;
+
+  font-size: calc(0.875rem * var(--font-zoom));
+
+  &:hover {
+    @apply bg-marathon-gray transition-colors duration-150;
+  }
+
+  &:first-child {
+    @apply rounded-tl-marathon-8 rounded-bl-marathon-8;
+  }
+
+  &:last-child {
+    @apply rounded-tr-marathon-8 rounded-br-marathon-8;
+  }
+}
+
+.active {
+  @apply bg-marathon-gray transition-colors duration-150;
+}
+
+html[data-theme='dark'] {
+  .button {
+    @apply bg-marathon-gray text-[#90a1ac];
+  }
+
+  .active {
+    @apply bg-marathon-light text-[#fff];
+  }
+}
