@@ -9,6 +9,7 @@ import { type IProgressBar } from './progress-bar.interface'
 import styles from './progress-bar.module.scss'
 
 export const ProgressBar: FC<IProgressBar> = ({
+  color,
   variant,
   percent,
   maxWidth,
@@ -43,7 +44,15 @@ export const ProgressBar: FC<IProgressBar> = ({
       })}
     >
       <div className={cn(styles.bar, styles.track)} />
-      <div ref={progressRef} className={cn(styles.bar, styles.progress)} />
+      <div
+        ref={progressRef}
+        style={{
+          backgroundColor: color,
+        }}
+        className={cn(styles.bar, styles.progress, {
+          [styles.colorized]: !color,
+        })}
+      />
     </div>
   )
 }

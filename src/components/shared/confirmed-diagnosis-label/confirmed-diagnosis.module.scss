@@ -1,0 +1,13 @@
+.label {
+  @apply mb-1;
+}
+
+.text {
+  @apply text-marathon-light;
+
+  font-size: calc(0.875rem * var(--font-zoom));
+}
+
+.value {
+  @apply font-rubik font-medium;
+}

@@ -10,7 +10,7 @@
   @apply bg-marathon-gray;
 }
 
-.progress {
+.progress.colorized {
   @apply bg-marathon-blue;
 }
 
@@ -18,11 +18,11 @@
   @apply h-[6px];
 
   .track {
-    @apply w-full h-[6px] top-1;
+    @apply w-full h-[6px];
   }
 
   .progress {
-    @apply h-1;
+    @apply h-[6px];
   }
 }
 

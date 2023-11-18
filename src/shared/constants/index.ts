@@ -38,4 +38,12 @@ export const Constants = {
     password:
       /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,32}$/,
   },
+
+  colors: {
+    PEACH: '#ff715b',
+    MALACHITE: '#04e762',
+    AZURE: '#0496ff',
+    PURPLE: '#6665dd',
+    TEAL: '#34d1bf',
+  },
 }
