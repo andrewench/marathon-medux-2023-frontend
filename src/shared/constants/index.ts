@@ -45,5 +45,7 @@ export const Constants = {
     AZURE: '#0496ff',
     PURPLE: '#6665dd',
     TEAL: '#34d1bf',
+    ELECTRO: '#29e7cd',
+    GREEN: '#7ed321',
   },
 }

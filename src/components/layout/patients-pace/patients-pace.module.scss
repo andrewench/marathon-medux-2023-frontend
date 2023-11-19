@@ -1,0 +1,25 @@
+.marker {
+  @apply mr-[6px] inline-block w-[12px] h-[12px] bg-[#fff] border-[3px] rounded-[50%];
+
+  &.green {
+    @apply border-marathon-green;
+  }
+
+  &.cyan {
+    @apply border-marathon-electro;
+  }
+}
+
+.text {
+  @apply text-marathon-light font-rubik uppercase;
+
+  letter-spacing: 0.42px;
+
+  font-size: calc(0.625rem * var(--font-zoom));
+}
+
+html[data-theme='dark'] {
+  .marker {
+    @apply bg-[#000];
+  }
+}
