@@ -1,0 +1,68 @@
+.button {
+  @apply relative rounded-marathon-8 px-3 py-2 transition-colors duration-150;
+
+  &.notify {
+    @apply after:bg-marathon-green after:border-[4px] after:border-marathon-background;
+
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: -8px;
+      left: calc(50% - 8px);
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+    }
+  }
+
+  &:hover,
+  &.selected {
+    @apply bg-[#fff];
+
+    box-shadow: 3px 3px 10px #00000005;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:focus-visible {
+    @apply bg-marathon-azure/30;
+
+    .day,
+    .weekDay {
+      @apply text-[#fff];
+    }
+  }
+}
+
+.day {
+  @apply text-marathon-light mb-2;
+
+  font-size: calc(1rem * var(--font-zoom));
+}
+
+.weekDay {
+  @apply text-[#636d73];
+
+  font-size: calc(0.5625rem * var(--font-zoom));
+}
+
+html[data-theme='dark'] {
+  .button {
+    &.notify {
+      @apply after:border-marathon-gray;
+    }
+
+    &:hover,
+    &.selected {
+      @apply bg-marathon-light/10;
+
+      .day,
+      .weekDay {
+        @apply text-[#fff];
+      }
+    }
+  }
+}

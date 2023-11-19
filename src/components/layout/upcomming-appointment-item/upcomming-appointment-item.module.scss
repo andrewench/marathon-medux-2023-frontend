@@ -1,0 +1,17 @@
+.box {
+  @apply w-full;
+}
+
+.price {
+  @apply text-marathon-light;
+
+  & > svg {
+    @apply mr-1;
+  }
+}
+
+.value {
+  @apply font-medium;
+
+  font-size: calc(1rem * var(--font-zoom));
+}

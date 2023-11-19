@@ -1,0 +1,59 @@
+.box {
+  align-items: unset;
+}
+
+.metaBox {
+  @apply mt-3;
+}
+
+.meta {
+  @apply ml-5;
+}
+
+.userName {
+  @apply text-marathon-blue;
+
+  font-size: calc(0.875rem * var(--font-zoom));
+}
+
+.appointmentName {
+  @apply text-marathon-light font-medium;
+
+  font-size: calc(1rem * var(--font-zoom));
+}
+
+.acceptCall {
+  @apply ml-auto bg-marathon-background w-10 h-10 rounded-[20px] -scale-100;
+}
+
+.phoneIcon {
+  @apply text-[#636d73] rotate-90;
+}
+
+.clockIcon {
+  @apply text-[#636d73];
+}
+
+.callCreatedAt {
+  @apply font-medium ml-2 text-marathon-light;
+
+  font-size: calc(1rem * var(--font-zoom));
+}
+
+.menu {
+  @apply ml-auto;
+}
+
+.menuIcon {
+  @apply text-marathon-light;
+}
+
+html[data-theme='dark'] {
+  .acceptCall {
+    @apply bg-marathon-blue;
+  }
+
+  .phoneIcon {
+    @apply text-[#fff];
+  }
+}

@@ -2,3 +2,17 @@
   grid-column: 3 / 4;
   grid-row: 1 / 5;
 }
+
+.calendarOpener {
+  @apply text-marathon-blue;
+
+  font-size: calc(0.875rem * var(--font-zoom));
+}
+
+.text {
+  @apply border-dashed border-b-[1px] border-marathon-blue;
+}
+
+.scrollBar {
+  @apply mt-3 max-h-[560px];
+}

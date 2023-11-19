@@ -1,3 +1,9 @@
 .divider {
   @apply w-full border-dashed border-[1px] border-[#a2c0d4] border-b-0;
 }
+
+html[data-theme='dark'] {
+  .divider {
+    @apply border-[#42474b];
+  }
+}

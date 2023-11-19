@@ -1,0 +1,13 @@
+.weekBar {
+  @apply mt-5 h-[100px] bg-marathon-background rounded-marathon-8 px-3;
+}
+
+.switcher {
+  @apply text-[#636d73];
+}
+
+html[data-theme='dark'] {
+  .weekBar {
+    @apply bg-marathon-gray;
+  }
+}
