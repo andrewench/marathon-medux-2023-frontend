@@ -5,7 +5,8 @@ import cn from 'clsx'
 
 import { Flex } from '@/components/layout'
 
-import { DotProgressBar, type TPoint } from '@/components/ui'
+import { DotProgressBar } from '@/components/ui/dot-progress-bar/dot-progress-bar.component'
+import { type TPoint } from '@/components/ui/dot-progress-bar/dot-progress-bar.interface'
 
 import { Constants } from '@/shared/constants'
 

@@ -5,7 +5,9 @@ import { FieldValues } from 'react-hook-form'
 
 import cn from 'clsx'
 
-import { ITextField, TextField } from '@/components/ui'
+import { TextField } from '../text-field/text-field.component'
+
+import { type ITextField } from '../text-field/text-field.interface'
 
 import styles from './search-field.module.scss'
 
