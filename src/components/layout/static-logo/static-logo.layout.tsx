@@ -11,7 +11,7 @@ import { PropsWithClassName } from '@/shared/types'
 export const StaticLogo: FC<PropsWithClassName> = ({ className }) => {
   return (
     <Image
-      src="/logo.svg"
+      src="/assets/images/logo.svg"
       alt="Medux Logo"
       width={164}
       height={42}

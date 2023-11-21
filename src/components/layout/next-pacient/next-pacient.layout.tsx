@@ -17,7 +17,7 @@ export const NextPacient: FC = () => {
       <PacientItem
         data={{
           avatar: {
-            src: '/user_2.png',
+            src: '/assets/images/user_2.png',
             alt: 'Avatar',
           },
           userName: 'Polly Paul',

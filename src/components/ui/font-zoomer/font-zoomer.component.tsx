@@ -20,20 +20,28 @@ import styles from './font-zoomer.module.scss'
 export const FontZoomer: FC = () => {
   const [currentPercent, setCurrentPercent] = useState<number>(0)
 
-  const { storage, updateStorage } = useStorage(Constants.storage.NAME)
+  const { initialStorage, updateStorage, getStorage } = useStorage(
+    Constants.storage.NAME,
+  )
 
-  const [fontZoom, setFontZoom] = useState<TZoomValue>(storage.fontZoom)
+  const [fontZoom, setFontZoom] = useState<TZoomValue>(() => {
+    if (initialStorage === null) return Constants.fontZoomer.DEFAULT_VALUE
+
+    return initialStorage.fontZoom
+  })
 
   const [points, setPoints] = useState<TPoint[]>(
     initPointList(setFontZoom, setCurrentPercent),
   )
 
   useEffect(() => {
+    const currentStorage = getStorage()
+
     updateStorage(Constants.storage.NAME, {
-      ...storage,
+      ...currentStorage,
       fontZoom,
     })
-  }, [fontZoom, storage, updateStorage])
+  }, [fontZoom, getStorage, updateStorage])
 
   useEffect(() => {
     const foundPoint = points.some(

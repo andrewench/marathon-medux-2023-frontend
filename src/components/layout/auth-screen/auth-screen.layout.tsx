@@ -29,7 +29,7 @@ export const AuthScreen: FC<PropsWithChildren<IAuthScreen>> = ({
         >
           <Link href={homeUrl} className={styles.homeLink}>
             <Image
-              src="/logo.svg"
+              src="/assets/images/logo.svg"
               alt="Medux Logo"
               width={162}
               height={42}

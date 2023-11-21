@@ -7,8 +7,8 @@ import { IStorage } from './use-storage.interface'
 export const useStorage = (name: string) => {
   const { DEFAULT_CONFIG } = Constants.storage
 
-  const [storage, setStorage] = useState<IStorage>(() => {
-    if (typeof window === 'undefined') return DEFAULT_CONFIG
+  const [initialStorage] = useState<IStorage | null>(() => {
+    if (typeof window === 'undefined') return null
 
     const data = localStorage.getItem(name)
 
@@ -67,5 +67,21 @@ export const useStorage = (name: string) => {
     }
   }, [])
 
-  return { storage, updateStorage }
+  const getStorage = useCallback((): typeof DEFAULT_CONFIG => {
+    try {
+      const storage = localStorage.getItem(name)
+
+      if (!storage) return DEFAULT_CONFIG
+
+      const parsedStorage = JSON.parse(storage)
+
+      if (typeof parsedStorage !== 'object') return DEFAULT_CONFIG
+
+      return parsedStorage
+    } catch (err) {
+      return DEFAULT_CONFIG
+    }
+  }, [DEFAULT_CONFIG, name])
+
+  return { initialStorage, updateStorage, getStorage }
 }

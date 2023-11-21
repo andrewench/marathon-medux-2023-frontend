@@ -1,8 +1,8 @@
 import { bindActionCreators } from '@reduxjs/toolkit'
 
-import { useAppDispatch } from '@/shared/hooks'
-
 import { allActions } from '@/shared/presets'
+
+import { useAppDispatch } from '@/shared/hooks'
 
 export const useActions = () => {
   const dispatch = useAppDispatch()

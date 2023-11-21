@@ -1,6 +1,8 @@
 {
   "extends": "next/core-web-vitals",
   "rules": {
+    "@next/next/no-head-element": "off",
+    "@next/next/no-sync-scripts": "off",
     "import/no-cycle": [
       "error",
       {

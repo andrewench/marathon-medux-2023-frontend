@@ -34,7 +34,7 @@ export const Logo: FC<{ responsive?: boolean }> = ({ responsive }) => {
 
       {responsive && (
         <Image
-          src="/logo-mini.svg"
+          src="/assets/images/logo-mini.svg"
           width={41}
           height={42}
           alt="Medux Logo"

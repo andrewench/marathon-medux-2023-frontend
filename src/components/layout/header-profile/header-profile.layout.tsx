@@ -45,7 +45,7 @@ export const HeaderProfile: FC = () => {
         <Bell size={18} strokeWidth={1} className="icon" />
       </SquareButton>
 
-      <Avatar src="/user_1.png" alt="Avatar" />
+      <Avatar src="/assets/images/user_1.png" alt="Avatar" />
 
       <div className={styles.meta}>
         <p className={cn('skeleton-line', styles.username)}>

@@ -12,7 +12,7 @@ export const UpcommingAppointmentItem: FC = () => {
       <PacientItem
         data={{
           avatar: {
-            src: '/user_3.png',
+            src: '/assets/images/user_3.png',
             alt: 'Avatar',
           },
           userName: 'Shawon Hampton',

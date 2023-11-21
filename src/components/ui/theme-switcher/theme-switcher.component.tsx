@@ -1,7 +1,7 @@
 'use client'
 
 import { Palette } from 'lucide-react'
-import { FC, useEffect, useState } from 'react'
+import { FC, useCallback, useEffect, useRef, useState } from 'react'
 
 import { DropList } from '@/components/layout/drop-list/drop-list.layout'
 
@@ -17,20 +17,62 @@ import { TThemeMode } from '@/shared/types'
 import { ThemeModeList } from './theme-switcher.data'
 
 export const ThemeSwitcher: FC = () => {
-  const [selectedTheme, setSelectedTheme] = useState<TThemeMode | 'none'>(
-    'none',
+  const [selectedTheme, setSelectedTheme] = useState<TThemeMode>()
+
+  const { updateStorage, getStorage } = useStorage(Constants.storage.NAME)
+
+  const colorSchemeQuery = useRef<MediaQueryList>(
+    typeof window === 'undefined'
+      ? null
+      : window.matchMedia('(prefers-color-scheme: dark)'),
   )
 
-  const { storage, updateStorage } = useStorage(Constants.storage.NAME)
+  const isDark = colorSchemeQuery.current?.matches
+
+  const applyTheme = useCallback(() => {
+    const currentStorage = getStorage()
+
+    const { theme } = currentStorage
+
+    if (theme !== 'system') return
+    if (!colorSchemeQuery.current) return
+
+    const headElement = document.documentElement
+
+    isDark
+      ? headElement.setAttribute('data-theme', 'dark')
+      : headElement.setAttribute('data-theme', 'light')
+  }, [getStorage, isDark])
 
   useEffect(() => {
-    if (selectedTheme === 'none') return
+    if (!selectedTheme) return
+
+    const currentStorage = getStorage()
 
     updateStorage(Constants.storage.NAME, {
-      ...storage,
+      ...currentStorage,
       theme: selectedTheme,
     })
-  }, [selectedTheme, storage, updateStorage])
+  }, [getStorage, selectedTheme, updateStorage])
+
+  useEffect(() => {
+    const schemeQuery = colorSchemeQuery.current
+
+    if (!schemeQuery) return
+    if (selectedTheme !== 'system') return
+
+    const headElement = document.documentElement
+
+    isDark
+      ? headElement.setAttribute('data-theme', 'dark')
+      : headElement.setAttribute('data-theme', 'light')
+
+    schemeQuery.addEventListener('change', applyTheme)
+
+    return () => {
+      schemeQuery.removeEventListener('change', applyTheme)
+    }
+  }, [applyTheme, isDark, selectedTheme])
 
   return (
     <DropList
@@ -45,7 +87,9 @@ export const ThemeSwitcher: FC = () => {
           <>
             {ThemeModeList.map(({ type, ...props }, idx) => (
               <DropMenuItem
-                onClick={() => setSelectedTheme(type)}
+                onClick={() => {
+                  setSelectedTheme(type)
+                }}
                 key={idx}
                 {...props}
               />
